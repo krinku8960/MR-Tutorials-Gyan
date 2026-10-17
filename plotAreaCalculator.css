@@ -925,6 +925,285 @@ font-weight:600;
 
 /* ...existing code... */
 
+/* Responsive adjustments only; desktop styles above remain unchanged. */
+@media (max-width: 1000px) {
+    .header {
+        height: auto;
+        min-height: 118px;
+        flex-wrap: wrap;
+        padding: 16px 20px 26px;
+    }
+
+    .rightBox {
+        margin-left: auto;
+    }
+
+    .contaienr-footerItemBox {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contaienr-footerItemBox .contentBox_one,
+    .contaienr-footerItemBox .contentBox_two {
+        width: calc(100% - 40px);
+        max-width: 760px;
+        height: auto;
+        min-height: 0;
+        margin: 12px auto;
+        padding: 20px;
+    }
+
+    .contetResultPlotingimg {
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .contetResultPlotingimg #boxResultThisOutput {
+        margin: 16px;
+    }
+
+    .plotAreaImage {
+        position: relative;
+        width: min(100%, 250px);
+    }
+
+    .plotAreaImage img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .plotAreaImage .inputAreaPrintbox {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .inputAreaPrintbox #plotAraInputText_back,
+    .inputAreaPrintbox #plotAraInputText_fornt,
+    .inputAreaPrintbox #plotAraInputText_left,
+    .inputAreaPrintbox #plotAraInputText_right {
+        position: absolute;
+        margin: 0;
+    }
+
+    .inputAreaPrintbox #plotAraInputText_back {
+        top: 8%;
+        left: 50%;
+        bottom: auto;
+        transform: translateX(-50%);
+    }
+
+    .inputAreaPrintbox #plotAraInputText_fornt {
+        bottom: 8%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .inputAreaPrintbox #plotAraInputText_left {
+        top: 50%;
+        right: auto;
+        left: 4%;
+        transform: translateY(-50%);
+    }
+
+    .inputAreaPrintbox #plotAraInputText_right {
+        top: 50%;
+        right: 4%;
+        bottom: auto;
+        left: auto;
+        transform: translateY(-50%);
+    }
+
+    .formulaItwm {
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+        margin: 10px 0 0;
+        left: auto;
+    }
+
+    .formulaItwm > p {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .formulaItwm i {
+        flex: 0 0 auto;
+        left: auto;
+    }
+
+    .ideaCalculation-contaiener {
+        height: auto;
+        min-height: 50px;
+        gap: 12px;
+    }
+
+    .ideaCalculation-contaiener i {
+        flex: 0 0 auto;
+        margin-left: 0;
+    }
+
+    .ideaCalculation-contaiener p {
+        min-width: 0;
+        left: auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .header {
+        min-height: 96px;
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .homeBox {
+        width: 64px;
+        height: 60px;
+        margin-right: 0;
+    }
+
+    .headingBox {
+        min-width: 0;
+    }
+
+    .headingBox h1 {
+        font-size: clamp(20px, 4.5vw, 28px);
+        line-height: 1.1;
+    }
+
+    .headingBox p {
+        margin-top: 6px;
+        font-size: clamp(10px, 2.5vw, 12px);
+        letter-spacing: 1.5px;
+    }
+
+    .rightBox {
+        gap: 8px;
+    }
+
+    .calculateBtn {
+        min-width: 46px;
+        width: 46px;
+        height: 46px;
+        padding: 0;
+    }
+
+    .contaienr-footerItemBox .contentBox_one,
+    .contaienr-footerItemBox .contentBox_two {
+        width: calc(100% - 24px);
+        margin: 12px;
+        padding: 16px;
+    }
+
+    .calculateAreaResult-Btn {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .calculateAreaResult-Btn button,
+    .calculateAreaResult-Btn button:nth-child(2) {
+        width: auto;
+        min-width: 140px;
+        margin: 0;
+    }
+
+    .footerText {
+        gap: 8px;
+        padding: 0 12px 20px;
+    }
+
+    .text {
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr) 40px;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .homeBox {
+        width: 48px;
+        height: 48px;
+    }
+
+    .homeBox i {
+        font-size: 25px;
+    }
+
+    .headingBox h1 {
+        font-size: clamp(17px, 5vw, 22px);
+        letter-spacing: -0.5px;
+    }
+
+    .headingBox p {
+        letter-spacing: 0.5px;
+    }
+
+    .rightBox {
+        margin-left: 0;
+    }
+
+    .calculateBtn {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .sideInputbox_group {
+        gap: 12px;
+    }
+
+    .sideInputbox_group .ForntInputBox_one,
+    .sideInputbox_group .backInputBox_two,
+    .sideInputbox_group .leftInputBox_three,
+    .sideInputbox_group .rightInputBox_four {
+        max-width: 250px;
+    }
+
+    .contetResultPlotingimg {
+        flex-direction: column;
+    }
+
+    .contetResultPlotingimg #boxResultThisOutput {
+        width: min(100% - 32px, 260px);
+        margin: 16px;
+    }
+
+    .formulaItwm {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .ideaCalculation-contaiener {
+        align-items: flex-start;
+        margin: 12px;
+        padding: 10px;
+    }
+
+    .ideaCalculation-contaiener i {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    .line {
+        width: min(12vw, 50px);
+    }
+}
+
 :root {
     --bg-1: #010615;
     --bg-2: #020b24;
