@@ -394,6 +394,143 @@
 
     box-shadow: 0 0 8px #00e5ff;
 }
+
+/* Responsive overrides: keep the existing desktop design unchanged. */
+@media (max-width: 850px) {
+    .containerBox {
+        top: 0;
+        width: calc(100% - 32px);
+        max-width: 600px;
+        height: auto;
+        margin: 24px auto 0;
+        padding: 16px;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .containerBox .contentBox-one,
+    .containerBox .contentBox-two {
+        width: 100%;
+        height: auto;
+    }
+
+    .containerBox .contentBox-one {
+        padding: 10px 12px 24px;
+        border-right: 0;
+        border-bottom: 1px solid rgb(0, 200, 255);
+    }
+
+    .containerBox .contentBox-two {
+        padding-bottom: 20px;
+    }
+
+    .principleAmount-grp,
+    .InterestRate-grp,
+    .Time-t-grp {
+        width: 100%;
+    }
+
+    .principleAmount-grp input,
+    .InterestRate-grp input,
+    .Time-t-grp input {
+        left: 0;
+        width: 100%;
+        padding-left: 60px;
+    }
+
+    .principleAmount-grp i,
+    .InterestRate-grp i,
+    .Time-t-grp i {
+        z-index: 1;
+        flex: 0 0 50px;
+    }
+
+    .Time-t-grp input {
+        padding-right: 90px;
+    }
+
+    .Time-t-grp select {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: auto;
+        z-index: 2;
+        width: 82px;
+        height: 100%;
+    }
+
+    #calculate-btn {
+        width: 100%;
+    }
+
+    #formulaBox {
+        width: calc(100% - 20px);
+    }
+
+    .footerText {
+        margin: 32px 16px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .containerBox {
+        width: calc(100% - 20px);
+        margin-top: 12px;
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .containerBox .contentBox-one {
+        padding: 8px 6px 20px;
+    }
+
+    .contentBox-one label {
+        font-size: 16px;
+    }
+
+    .contentBox-one label:nth-child(3),
+    .contentBox-one label:nth-child(5) {
+        margin-top: 22px;
+    }
+
+    .principleAmount-grp input,
+    .InterestRate-grp input,
+    .Time-t-grp input {
+        font-size: 16px;
+    }
+
+    .contentBox-two h1 {
+        font-size: 20px;
+    }
+
+    #formulaBox {
+        height: auto;
+        min-height: 38px;
+    }
+
+    #formulaBox h2 {
+        font-size: 15px;
+    }
+
+    .footerText {
+        gap: 10px;
+        margin: 24px 10px 16px;
+    }
+
+    .savePlanGrow {
+        gap: 8px;
+        padding: 9px 16px;
+        font-size: 17px;
+    }
+
+    .savePlanGrow i {
+        font-size: 19px;
+    }
+
+    .line {
+        width: clamp(16px, 8vw, 40px);
+    }
+}
     </style>
 </head>
 
