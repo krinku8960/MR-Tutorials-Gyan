@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description"
+    content="MR Tutorials Gyan - Learn coding, explore maths formulas, and use free online calculators and smart tools.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MR Tutorials Gyan | Learn, Code & Calculate</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<link rel="icon" type="image/png" href="Images/fb3a9120-7210-42bb-8d96-f8d9a35928dc-removebg-preview.png">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif
+    }
+
+    :root {
+        --bg: #111318;
+        --card: #1b1e27;
+        --text: #f5f6fa;
+        --muted: #a5adbd;
+        --border: #303541;
+        --accent: #7667ff;
+        --input: #151821;
+        --shadow: 0 8px 25px #0004
+    }
+
+    body.light {
+        --bg: #f3f5fa;
+        --card: #fff;
+        --text: #202438;
+        --muted: #697386;
+        --border: #dfe3ec;
+        --accent: #6254e8;
+        --input: #f7f8fc;
+        --shadow: 0 8px 25px #26345b12
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        transition: background .3s, color .3s
+    }
+
+    button,
+    input,
+    select {
+        font: inherit
+    }
+
+    button {
+        cursor: pointer
+    }
+
+    .container {
+        max-width: 1250px;
+        margin: auto;
+        padding: 22px
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+        padding: 12px 0 25px;
+        border-bottom: 1px solid var(--border)
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px
+    }
+
+    .logo-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 15px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #7667ff6a, #00a0ac2a);
+        font-size: 27px;
+    }
+
+    .logo-icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo h1 {
+        font-size: 25px;
+        letter-spacing: .3px
+    }
+
+    .logo p {
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 6px;
+        letter-spacing: 1px
+    }
+
+    .header-actions {
+        display: flex;
+        gap: 10px
+    }
+
+    .theme-btn {
+        padding: 11px 15px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--card);
+        color: var(--text);
+        transition: .25s
+    }
+
+    .theme-btn:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px)
+    }
+
+    .hero {
+        text-align: center;
+        padding: 48px 10px 30px
+    }
+
+    .badge {
+        display: inline-block;
+        background: #7667ff20;
+        color: var(--accent);
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 18px
+    }
+
+    .hero h2 {
+        font-size: clamp(30px, 5vw, 47px);
+        margin-bottom: 14px
+    }
+
+    .gradient {
+        background: linear-gradient(90deg, #8a76ff, #14cbd5);
+        color: transparent;
+        background-clip: text
+    }
+
+    .hero p {
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 650px;
+        margin: auto
+    }
+
+    .search-row {
+        display: flex;
+        gap: 12px;
+        max-width: 800px;
+        margin: 28px auto 35px
+    }
+
+    .search-box {
+        position: relative;
+        flex: 1
+    }
+
+    .search-box span {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 19px
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 15px 15px 15px 45px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--input);
+        color: var(--text);
+        outline: none
+    }
+
+    .search-box input:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px #7667ff20
+    }
+
+    .add-btn {
+        padding: 13px 17px;
+        border: 1px solid var(--accent);
+        border-radius: 10px;
+        background: var(--accent);
+        color: white;
+        font-weight: bold;
+        white-space: nowrap
+    }
+
+    .section-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 10px 0 20px
+    }
+
+    .section-heading h3 {
+        font-size: 21px
+    }
+
+    .counter {
+        color: var(--muted);
+        font-size: 13px
+    }
+
+    .filters {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 23px
+    }
+
+    .filter-btn {
+        padding: 9px 14px;
+        border: 1px solid var(--border);
+        border-radius: 30px;
+        background: var(--card);
+        color: var(--muted);
+        transition: .2s
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent)
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 17px
+    }
+
+    .calc-card {
+        position: relative;
+        overflow: hidden;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        padding: 20px 18px;
+        min-height: 175px;
+        display: flex;
+        flex-direction: column;
+        transition: transform .25s, border-color .25s, box-shadow .25s
+    }
+
+    .calc-card:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #7667ff, #14cbd5);
+        transition: width .35s
+    }
+
+    .calc-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+        box-shadow: var(--shadow)
+    }
+
+    .calc-card:hover:before {
+        width: 100%
+    }
+
+    .calc-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        font-size: 23px;
+        background: #7667ff18;
+        margin-bottom: 15px
+    }
+
+    .calc-card h4 {
+        font-size: 16px;
+        margin-bottom: 8px;
+        overflow-wrap: anywhere
+    }
+
+    .calc-card p {
+        font-size: 12px;
+        color: var(--muted);
+        line-height: 1.5;
+        margin-bottom: 17px
+    }
+
+    .open-btn {
+        margin-top: auto;
+        border: 0;
+        background: transparent;
+        color: var(--accent);
+        font-weight: bold;
+        text-align: left;
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px
+    }
+
+    .open-btn span:last-child {
+        transition: transform .2s
+    }
+
+    .calc-card:hover .open-btn span:last-child {
+        transform: translateX(5px)
+    }
+
+    .remove-btn {
+        margin-top: 10px;
+        padding: 7px;
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        background: transparent;
+        color: var(--muted)
+    }
+
+    .empty {
+        grid-column: 1/-1;
+        text-align: center;
+        padding: 45px 15px;
+        color: var(--muted);
+        background: var(--card);
+        border: 1px dashed var(--border);
+        border-radius: 15px
+    }
+
+    footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+        padding: 35px 10px 20px;
+        margin-top: 35px;
+        border-top: 1px solid var(--border)
+    }
+
+    footer strong {
+        color: var(--accent)
+    }
+
+    .modal {
+        position: fixed;
+        inset: 0;
+        background: #0009;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        z-index: 10
+    }
+
+    .modal.show {
+        display: flex
+    }
+
+    .modal-box {
+        background: var(--card);
+        color: var(--text);
+        width: 100%;
+        max-width: 470px;
+        padding: 25px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: var(--shadow)
+    }
+
+    .modal-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 22px
+    }
+
+    .close-btn {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--input);
+        color: var(--text);
+        padding: 6px 11px;
+        font-size: 20px
+    }
+
+    .form-group {
+        margin-bottom: 17px
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 8px;
+        color: var(--muted)
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 9px;
+        border: 1px solid var(--border);
+        background: var(--input);
+        color: var(--text);
+        outline: none
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 13px;
+        background: var(--accent);
+        color: white;
+        border: 0;
+        border-radius: 10px;
+        font-weight: bold
+    }
+
+    .help {
+        font-size: 12px;
+        line-height: 1.6;
+        color: var(--muted);
+        margin-top: 15px
+    }
+
+    .toast {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 100px);
+        opacity: 0;
+        background: var(--card);
+        color: var(--text);
+        border: 1px solid var(--border);
+        padding: 13px 20px;
+        border-radius: 10px;
+        z-index: 20;
+        transition: .3s;
+        box-shadow: var(--shadow);
+        max-width: 90%;
+        text-align: center
+    }
+
+    .toast.show {
+        transform: translate(-50%, 0);
+        opacity: 1
+    }
+
+    @media(max-width:950px) {
+        .grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr))
+        }
+    }
+
+    @media(max-width:650px) {
+        .container {
+            padding: 15px
+        }
+
+        .grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 11px
+        }
+
+        .calc-card {
+            padding: 15px 12px;
+            min-height: 165px
+        }
+
+        .logo h1 {
+            font-size: 20px
+        }
+
+        .hero {
+            padding-top: 35px
+        }
+
+        .search-row {
+            flex-wrap: wrap
+        }
+
+        .search-box {
+            flex-basis: 100%
+        }
+
+        .add-btn {
+            width: 100%
+        }
+    }
+
+    @media(max-width:380px) {
+        .grid {
+            grid-template-columns: 1fr
+        }
+
+        .header-actions {
+            width: 100%
+        }
+
+        .theme-btn {
+            flex: 1
+        }
+    }
+
+    .navBox a {
+        border: 1px solid cyan;
+        padding: 10px;
+        border-radius: 50px;
+        font-size: 15px;
+        position: relative;
+        top: 10px;
+        margin-right: 10px;
+        color: cyan;
+        display: inline-block;
+        background: transparent;
+        text-decoration: none;
+        transition: all .3s ease;
+    }
+
+    .navBox a:hover {
+        transform: translateY(-3px);
+        background: cyan;
+        color: #000;
+        box-shadow: 0 4px 12px #00ffff66;
+    }
+
+    .navBox a i {
+        transition: transform .3s ease;
+    }
+
+    .navBox a:hover i {
+        transform: scale(1.2);
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <div class="logo">
+                <div class="logo-icon"><img src="Images/fb3a9120-7210-42bb-8d96-f8d9a35928dc-removebg-preview.png"
+                        alt=""></div>
+                <div>
+                    <h1>MR Tutorials <span class="gradient">Gyan</span></h1>
+                    <p>LEARN • CALCULATE • GROW</p>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">☀️ Light Mode</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <span class="badge">🚀 YOUR LEARNING DESTINATION</span>
+            <h2>All Calculators, <span class="gradient">One Place.</span></h2>
+            <p>Find all your calculators, mathematical formulas and useful tools in one place. Search, select and open
+                your calculator with one click.</p>
+
+            <div class="search-row">
+                <div class="search-box">
+                    <span>🔍</span>
+                    <input id="searchInput" type="search" placeholder="Search calculators..."
+                        oninput="renderCalculators()">
+                </div>
+                <button class="add-btn" onclick="openModal()">＋ Add Calculator</button>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-heading">
+                <h3>🧮 My Calculators</h3>
+                <span class="counter" id="counter">0 Calculators</span>
+            </div>
+
+            <div class="filters" id="filters">
+                <button class="filter-btn active" data-category="All">All</button>
+                <button class="filter-btn" data-category="Math">📐 Math</button>
+                <button class="filter-btn" data-category="Health">💚 Health</button>
+                <button class="filter-btn" data-category="Finance">💰 Finance</button>
+                <button class="filter-btn" data-category="Utility">🛠️ Utility</button>
+                <button class="filter-btn" data-category="Files">📁 Other Files</button>
+            </div>
+
+            <div class="grid" id="calculatorGrid"></div>
+        </section>
+
+        <footer>
+            <p>Made with ❤️ by <strong>MRR Tutorials Gyan</strong></p>
+            <p style="margin-top:8px">Your destination for calculators, formulas and learning.</p>
+            <div class="navBox">
+                <a href="https://github.com/krinku8960"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rinku-kumar-a9b948368?utm_source=chatgpt.com"><i
+                        class="fa-brands fa-linkedin-in fa-flip-360"></i></a>
+                <a href="https://www.youtube.com/@MRTutorialsgyan-u9s"><i
+                        class="fa-brands fa-youtube fa-flip-360"></i></a>
+                <a href="https://t.me/MrTutorialsGyan"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <div class="modal" id="addModal">
+        <div class="modal-box">
+            <div class="modal-top">
+                <h3>➕ Add New Calculator</h3>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+
+            <form id="calculatorForm">
+                <div class="form-group">
+                    <label for="calcName">Calculator Name *</label>
+                    <input id="calcName" required placeholder="Example: Square Area Calculator">
+                </div>
+
+                <div class="form-group">
+                    <label for="calcUrl">File Name or HTML Path *</label>
+                    <input id="calcUrl" required placeholder="Example: square_area.html">
+                </div>
+
+                <div class="form-group">
+                    <label for="calcCategory">Category</label>
+                    <select id="calcCategory">
+                        <option value="Math">Math</option>
+                        <option value="Health">Health</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Utility">Utility</option>
+                        <option value="Files">Other Files</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="calcIcon">Icon or Emoji</label>
+                    <input id="calcIcon" value="🧮" maxlength="8">
+                </div>
+
+                <div class="form-group">
+                    <label for="calcDescription">Description</label>
+                    <input id="calcDescription" placeholder="Describe this calculator">
+                </div>
+
+                <button type="submit" class="submit-btn">Save Calculator</button>
+            </form>
+
+            <p class="help">Enter the exact file name and path. The corresponding file must already exist in the
+                specified location.</p>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        const defaultCalculators = [
+            {name: "Average Calculator", url: "average_calculator.html", category: "Math", icon: "📊", description: "Calculate the average of numbers."},
+            {name: "Calculator", url: "calculater.js", category: "Files", icon: "📄", description: "JavaScript calculator source file."},
+            {name: "Calculator Style", url: "calculaterStyle.css", category: "Files", icon: "🎨", description: "Calculator CSS stylesheet."},
+            {name: "Cube Surface Area", url: "cube_surface_area.html", category: "Math", icon: "🧊", description: "Calculate the surface area of a cube."},
+            {name: "Cuboid Volume", url: "cuboid_volume.html", category: "Math", icon: "📦", description: "Calculate the volume of a cuboid."},
+            {name: "Percentage Calculator", url: "percentage_calculator.html", category: "Math", icon: "％", description: "Calculate percentages easily."},
+            {name: "Plot Area Calculator", url: "plotAreaCalculator.html", category: "Math", icon: "📐", description: "Calculate the area of a plot."},
+            {name: "Rectangle Area", url: "rectangle_area.html", category: "Math", icon: "▰", description: "Calculate the area of a rectangle."},
+            {name: "Weather", url: "Weather.html", category: "Utility", icon: "🌤️", description: "Weather information tool."},
+            {name: "Age Calculator", url: "ageCalculator.html", category: "Utility", icon: "🎂", description: "Calculate your age."},
+            {name: "BMI Calculator", url: "BMICalculator.html", category: "Health", icon: "💚", description: "Calculate your body mass index."},
+            {name: "Calculator Project", url: "calculaterProject.html", category: "Math", icon: "🧮", description: "Open the calculator project."},
+            {name: "Circle Area Calculator", url: "Circle Area Calculator.html", category: "Math", icon: "⭕", description: "Calculate the area of a circle."},
+            {name: "Cube Calculator", url: "CubeCalculator.html", category: "Math", icon: "📦", description: "Calculate cube measurements."},
+            {name: "GDP Calculator", url: "GDP Calculator.html", category: "Finance", icon: "📈", description: "GDP calculation tool."},
+            {name: "Plot Area Calculator", url: "plotAreaCalculator.html", category: "Math", icon: "📏", description: "Open the plot area calculator."},
+            {name: "Plot Area Script", url: "plotAreaScript.js", category: "Files", icon: "📄", description: "Plot area JavaScript source file."},
+            {name: "Simple Interest Calculator", url: "Simple Interest Calculator.html", category: "Finance", icon: "💰", description: "Calculate simple interest."},
+            {name: "Triangle Area", url: "triangle_area.html", category: "Math", icon: "🔺", description: "Calculate the area of a triangle."}
+        ];
+
+        const STORAGE_KEY = "mrTutorialsCalculatorsEnglish";
+        let calculators = loadCalculators();
+        let activeCategory = "All";
+
+        function loadCalculators() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                return saved ? JSON.parse(saved) : [...defaultCalculators];
+            } catch (error) {
+                return [...defaultCalculators];
+            }
+        }
+
+        function saveCalculators() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(calculators));
+        }
+
+        function renderCalculators() {
+            const query = document.getElementById("searchInput").value.toLowerCase().trim();
+            const grid = document.getElementById("calculatorGrid");
+
+            const filtered = calculators.filter(calc => {
+                const values = [calc.name, calc.description, calc.category];
+                const matchesSearch = values.some(value =>
+                    String(value || "").toLowerCase().includes(query)
+                );
+                const matchesCategory = activeCategory === "All" || calc.category === activeCategory;
+                return matchesSearch && matchesCategory;
+            });
+
+            document.getElementById("counter").textContent =
+                filtered.length + (filtered.length === 1 ? " Calculator" : " Calculators");
+
+            grid.innerHTML = "";
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '<div class="empty"><div style="font-size:35px;margin-bottom:12px">🔎</div><h3>No Calculator Found</h3><p style="margin-top:10px">Try another search or add a new calculator.</p></div>';
+                return;
+            }
+
+            filtered.forEach(calc => {
+                const card = document.createElement("article");
+                card.className = "calc-card";
+
+                const icon = document.createElement("div");
+                icon.className = "calc-icon";
+                icon.textContent = calc.icon || "🧮";
+
+                const title = document.createElement("h4");
+                title.textContent = calc.name;
+
+                const description = document.createElement("p");
+                description.textContent = calc.description || "Open this file.";
+
+                const openButton = document.createElement("button");
+                openButton.className = "open-btn";
+
+                const label = document.createElement("span");
+                label.textContent = "Open File";
+
+                const arrow = document.createElement("span");
+                arrow.textContent = "→";
+
+                openButton.append(label, arrow);
+                openButton.addEventListener("click", () => openCalculator(calc.url));
+
+                card.append(icon, title, description, openButton);
+
+                if (calc.custom) {
+                    const removeButton = document.createElement("button");
+                    removeButton.className = "remove-btn";
+                    removeButton.textContent = "Remove";
+                    removeButton.addEventListener("click", () => {
+                        if (confirm("Remove " + calc.name + " from your list?")) {
+                            calculators = calculators.filter(item => item.id !== calc.id);
+                            saveCalculators();
+                            renderCalculators();
+                            showToast("Calculator removed successfully.");
+                        }
+                    });
+                    card.appendChild(removeButton);
+                }
+
+                grid.appendChild(card);
+            });
+        }
+
+        function openCalculator(url) {
+            if (!url || !url.trim()) {
+                showToast("Please enter a valid file path.");
+                return;
+            }
+
+            if (/^(javascript|data|vbscript):/i.test(url)) {
+                showToast("Invalid file path.");
+                return;
+            }
+
+            window.open(url, "_blank", "noopener");
+        }
+
+        function applyTheme(theme) {
+            document.body.classList.toggle("light", theme === "light");
+            document.getElementById("themeBtn").textContent =
+                theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode";
+            localStorage.setItem("mrTutorialsTheme", theme);
+        }
+
+        function toggleTheme() {
+            const next = document.body.classList.contains("light") ? "dark" : "light";
+            applyTheme(next);
+        }
+
+        applyTheme(localStorage.getItem("mrTutorialsTheme") || "dark");
+
+        document.getElementById("filters").addEventListener("click", event => {
+            const button = event.target.closest(".filter-btn");
+            if (!button) return;
+
+            activeCategory = button.dataset.category;
+
+            document.querySelectorAll(".filter-btn").forEach(item => {
+                item.classList.toggle("active", item === button);
+            });
+
+            renderCalculators();
+        });
+
+        function openModal() {
+            document.getElementById("addModal").classList.add("show");
+        }
+
+        function closeModal() {
+            document.getElementById("addModal").classList.remove("show");
+        }
+
+        document.getElementById("addModal").addEventListener("click", event => {
+            if (event.target.id === "addModal") closeModal();
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") closeModal();
+        });
+
+        document.getElementById("calculatorForm").addEventListener("submit", event => {
+            event.preventDefault();
+
+            const name = document.getElementById("calcName").value.trim();
+            const url = document.getElementById("calcUrl").value.trim();
+            const category = document.getElementById("calcCategory").value;
+            const icon = document.getElementById("calcIcon").value.trim() || "🧮";
+            const description = document.getElementById("calcDescription").value.trim();
+
+            if (!name || !url) {
+                showToast("Please enter the name and file path.");
+                return;
+            }
+
+            if (/^(javascript|data|vbscript):/i.test(url)) {
+                showToast("Please enter a valid file path.");
+                return;
+            }
+
+            const exists = calculators.some(calc =>
+                calc.name.toLowerCase() === name.toLowerCase() &&
+                calc.url.toLowerCase() === url.toLowerCase()
+            );
+
+            if (exists) {
+                showToast("This calculator is already in your list.");
+                return;
+            }
+
+            calculators.push({
+                id: Date.now().toString(),
+                name, url, category, icon, description,
+                custom: true
+            });
+
+            saveCalculators();
+            renderCalculators();
+            document.getElementById("calculatorForm").reset();
+            document.getElementById("calcIcon").value = "🧮";
+            closeModal();
+            showToast("Calculator added successfully!");
+        });
+
+        let toastTimer;
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.textContent = message;
+            toast.classList.add("show");
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove("show"), 3000);
+        }
+
+        renderCalculators();
+    </script>
+</body>
+
+</html>

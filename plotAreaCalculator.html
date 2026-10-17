@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plot Area Calculator</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="plotAreaCalculator.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <!-- Left Home Icon -->
+        <div class="homeBox">
+            <i class="fa-solid fa-house"></i>
+        </div>
+
+        <!-- Heading -->
+        <div class="headingBox">
+            <h1>
+                Plot Area <span>Calculator</span>
+            </h1>
+
+            <p>
+                Quick <b>•</b> Simple <b>•</b> Accurate
+            </p>
+        </div>
+        <!-- Right Section -->
+        <div class="rightBox">
+
+            <!-- Theme Button -->
+            <button class="themeBtn">
+                <i class="fa-regular fa-sun"></i>
+            </button>
+
+            <!-- Calculate Button -->
+            <button type="button" onclick="calculateQuestion()" class="calculateBtn">
+                <span>Calculate Your Plot Area</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Bottom Wave -->
+        <div class="wave"></div>
+    </header>
+
+    <!-------------------------------------------- Footer handdle ---------------------------------------- -->
+    <footer>
+        <div class="contaienr-footerItemBox">
+            <div class="contentBox_one">
+                <div class="textContentItem">
+                    <div class="TextItem-scal">
+                        <i class="fa-solid fa-ruler"></i>
+                    </div>
+                    <div class="plotEnterText">
+                        <h2>Enter Plot Measurements</h2><span
+                            style="color:rgb(0, 225, 255); position: relative; top:5px;">(in feet)</span>
+                    </div>
+                </div>
+                <form action="">
+                    <div class="sideInputbox_group">
+                        <div class="ForntInputBox_one">
+                            <div class="arrowDownup">
+                                <i class="fa-solid fa-arrows-up-down"></i>
+                                <p>font</p>
+                            </div>
+                            <input type="text" placeholder="ft" id="frontInput" required>
+                        </div>
+                        <div class="backInputBox_two">
+                            <div class="arrow-down">
+                                <i class="fa-solid fa-arrow-down"></i>
+                                <p>Back</p>
+                            </div>
+                            <input type="text" placeholder="ft" id="backInput" required>
+
+
+                        </div>
+                        <div class="leftInputBox_three">
+                            <div class="arrow-left">
+                                <i class="fa-solid fa-arrows-left-right"></i>
+                                <p>Left</p>
+
+                            </div>
+                            <input type="text" placeholder="ft" id="leftInput" required>
+                        </div>
+                        <div class="rightInputBox_four">
+                            <div class="arrow-right">
+
+                                <i class="fa-solid fa-arrows-left-right"></i>
+                                <p>Right</p>
+                            </div>
+
+                            <input type="text" placeholder="ft" id="rightInput" required>
+                        </div>
+
+                    </div>
+                    <div class="calculateAreaResult-Btn">
+                        <button type="button" onclick="calculateQuestion()"><i
+                                class="fa-solid fa-calculator fa-canvas-square" style="padding-right: 10PX;"></i>
+                            Calculate</button>
+                </form>
+                <button type="reset" onclick="calculateSI()" id="calculate-btn"><i class="fa-solid fa-arrows-rotate"
+                        style="padding-right: 10px;"></i> Reset</button>
+            </div>
+          
+        </div>
+        <div class="contentBox_two">
+            <div class="fontAwesomeIcon">
+                <i class="fa-brands fa-sith"></i><p>Result</p>
+            </div>
+            <div class="contetResultPlotingimg">
+                <div id="boxResultThisOutput">
+                    <p>Approximate Area</p>
+                    <h1 id="answer_result">None</h1>
+                    <p>Square Feet (sq ft)</p>
+                </div>
+                <div class="plotAreaImage" id="plotAreaImage">
+                  <img src="images/ChatGPT Image Sep 18, 2026, 12_35_17 PM.png" alt="3D Image">  
+                  <div class="inputAreaPrintbox">
+                  <p id="plotAraInputText_back">back</p>
+                  <p id="plotAraInputText_fornt">Front</p>
+                  <p id="plotAraInputText_left">left</p>
+                  <p id="plotAraInputText_right">Right</p>
+                  </div>
+                </div>
+            </div>
+                    <div class="formulaBoxContainer">
+                        <div class="code-font">
+            <i class="fa-solid fa-code"></i><p>Formula Used</p>
+              </div>
+            <div class="formulaItwm">
+                <p>
+    <span class="area">area</span> =
+    <span class="bracket">((</span>
+    <span class="front">front</span> +
+    <span class="back">back</span>
+    <span class="bracket">) / 2)</span>
+    *
+    <span class="bracket">((</span>
+    <span class="left">left</span> +
+    <span class="right">right</span>
+    <span class="bracket">) / 2)</span>
+</p> <i class="fa-solid fa-clone" id="copyBtn"></i>
+            </div>
+        </div>
+        </div>
+        </div>
+          <div class="ideaCalculation-contaiener">
+            <i class="fa-regular fa-lightbulb"></i><p>This is an approximate area calculation. <sapn class="coloreffectLatpoint">diagonal or more measurements (anglas) are required</sapn></p>
+        </div>
+         <div class="footerText">
+
+        <span class="line"></span>
+
+        <p class="text">
+            Made with
+            <span class="heart">♥</span>
+            for better planning
+        </p>
+
+        <span class="line"></span>
+
+    </div>
+    </footer>
+    <script src="plotAreaScript.js"></script>
+</body>
+
+</html>

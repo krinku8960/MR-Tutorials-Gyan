@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age calculator</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <style>
+        *{
+            margin: 0; padding: 0; box-sizing:border-box;
+        }
+        body{
+               background: linear-gradient(178deg, #1E1B1E 0%, #002D60 100%);
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+        }
+        .containerBox-outer {
+            border:1px solid rgb(246, 244, 244);
+            width:450px; height:420px;
+            border-radius:30px;
+            margin:40px auto;
+            background: linear-gradient(159deg, #013220 0%, #00c7b3 100%);
+            box-shadow:1px 2px 5px rgba(0, 48, 40, 0.347);
+        }
+        .content-item {
+            padding:20px;
+            /* align-items:center; */ 
+        }
+        .content-item h2{
+            text-align:center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+             display:flex; justify-content:center;
+            color:rgb(5, 187, 11);
+        }
+        .content-item p{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color:rgb(0, 246, 0); text-align:center;
+        }
+
+        .content-item .input-item {
+            /* margin-top:20px; */ display:inline-grid;
+            /* padding:20px; */
+            /* margin-top:20px; */
+            padding-top:0px;
+        }
+        .content-item .input-item label{
+           font-size:16px; color:rgb(0, 255, 42);
+           /* margin-top:10px; */ margin-top:40px;
+        }
+        .content-item .input-item input{
+            padding:10px; width:400px; margin-top:10px;
+            border:1px solid rgb(0, 173, 127); border-radius:5px;
+            background-color:rgba(0, 150, 110, 0.132);
+
+        }
+         .content-item .input-item input {
+            outline:1px solid rgb(0, 255, 0);
+    color: rgb(0, 255, 42);
+}
+        .content-item .input-item button{
+            width:200px; padding:12px 10px 12px 10px; border-radius:5px;
+            border:1px solid rgb(252, 252, 252);
+            background: linear-gradient(159deg, #15c77d 0%, #004a4a 100%); color:rgb(0, 255, 42);
+            display:flex; justify-content:center; align-items:center; transition: 0.2s ease-in-out;
+            margin:20px auto; &:hover{box-shadow:1px 4px 13px rgb(69, 255, 218); background: linear-gradient(159deg, #10ae6c 0%, #003f3f 100%); transform: translateY(-1px); cursor:pointer;}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="containerBox-outer">
+        <div class="content-item">
+            <h2>Age Calculator</h2>
+            <p><i class="fa-solid fa-cake-candles" style="color: rgb(72, 255, 0);"></i> Enter your date of birth to calculate your exact age.</p>
+            <div class="input-item">
+                <label for="####"><i class="fa-solid fa-calendar" style="color: rgb(0, 255, 51);"></i> Select Current Date : </label>
+                <input type="date" id="currentDate">
+                   <label for="####"><i class="fa-solid fa-user"></i> Enter Your DOB : </label>
+                <input type="date" id="dob_Date"/>
+                <button id="btnClickTocalculate">Calculate Age</button>
+                <p id="Result"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+//         const dateInput = document.getElementById("dateInput");
+
+// const today = new Date();
+
+// const year = today.getFullYear();
+// const month = String(today.getMonth() + 1).padStart(2, "0");
+// const day = String(today.getDate()).padStart(2, "0");
+
+// dateInput.value = `${year}-${month}-${day}`;
+
+// areThisButtonClick.addEventListener("click",function(){
+//     let areFirstInput = Number(areThisCureentDate.value);
+//     let areThisSeocndInput = Number(areDobDate.value);
+//     let areValueThisAge =  areFirstInput - areThisSeocndInput;
+//    areResultOutput.innerHTML = `Your age is: ${areValueThisAge}`;
+//    console.log(areValueThisAge );
+
+
+let areThisCureentDate = document.getElementById("currentDate");
+let areDobDate = document.getElementById("dob_Date");
+let areThisButtonClick = document.getElementById("btnClickTocalculate");
+const areResultOutput = document.getElementById("Result");
+
+areThisButtonClick.addEventListener("click", function () {
+
+    const today = new Date(areThisCureentDate.value);
+    const dob = new Date(areDobDate.value);
+
+    let age = today.getFullYear() - dob.getFullYear();
+
+    const month = today.getMonth() - dob.getMonth();
+    // const day = today.getDay() - today.getDay();
+
+    if (
+        month < 0 ||
+        (month === 0 && today.getDate() < dob.getDate())
+    ) {
+        age--;
+    }
+
+    // areResultOutput.innerHTML = `Your age is: ${age} years ${month} Month ${day} Day old`;
+    areResultOutput.innerHTML = `You are ${age} years, ${month} months old.`;
+    // this.style.color = "#ffffff";
+ areResultOutput.style.color = '#ffffff'
+ areResultOutput.style.border = "1px solid #ffffff";
+ areResultOutput.style.borderRadius = "10px";
+ areResultOutput.style.padding = "10px";
+ areResultOutput.style.backgroundColor  = "blue"
+//  areResultOutput.padding = "10px"
+//   areStylish.style.border = "1px solid #ffffff"
+
+
+
+});
+
+
+
+//    this.style.marginBottom = "20px";
+//    this.style.color = "blue";
+// this.style.color = ""
+// })
+
+    </script>
+</body>
+</html>

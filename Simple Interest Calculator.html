@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("images/pexels-thales13-39431056.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: rgb(0, 14, 136);
+            background-blend-mode: multiply;
+        }
+
+        .containerBox {
+            border: 1px solid rgb(0, 200, 255);
+               box-shadow:
+        0 0 10px #00e5ff,
+        0 0 25px rgba(0, 255, 200, 0.4);
+            width: 800px;
+            height: 440px;
+            margin: 0px auto;
+            border-radius: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            top: 30px;
+
+        }
+
+        .containerBox .contentBox-one {
+            width: 440px;
+            height: 410px;
+            border-right: 1px solid rgb(0, 200, 255);
+            border-radius: 1rem;
+            
+
+
+        }
+
+        .containerBox .contentBox-two {
+            border: 1px solid rgb(0, 200, 255);
+            width: 310px;
+            height: 410px;
+            box-shadow: 1px 2px 10px rgba(0, 200, 255, 0.6);
+            border-radius: 1rem;
+        }
+
+        #header-result {
+            border: 1px solid white;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            background: linear-gradient(135deg, #004cff, #00ffbf);
+            display: flex;
+            height: 45px;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* left:20px; position: relative; */
+        }
+
+        #header-result i {
+            color: #fff;
+            font-size: 20px;
+            /* font-weight: 1200; */
+            text-shadow: 0 2px 4px #03bfea;
+            position: relative;
+            left: 10px;
+        }
+
+        #header-result h2 {
+            color: #ffffff;
+            position: relative;
+            left: 10px;
+            font-size: 18px;
+        }
+
+        .content-item {
+            margin: 10px;
+            position: relative;
+            top: 10px;
+        }
+
+        .contentBox-two label {
+            color: #ffffff;
+            position: relative;
+            top: 5px;
+            left: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .contentBox-two h1:nth-child(4) {
+            color: #00bbff;
+        }
+
+        .contentBox-two h1 {
+            border-bottom: 1px solid rgba(0, 157, 255, 0.339);
+            margin: 10px;
+            color: rgb(0, 223, 182);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 22px;
+            padding-bottom: 10px;
+        }
+
+        #formulaBox {
+            border: 1px solid rgba(0, 157, 255, 0.715);
+            background-color: rgba(0, 157, 255, 0.184);
+            border-radius: 0.5rem;
+            padding: 5px;
+            position: relative;
+            top: 10px;
+            height: 38px;
+            width: 270px;
+            left: 10px;
+        }
+
+        #formulaBox h2 {
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            margin-left: 10px;
+
+        }
+
+        .lastTextItem {
+            position: relative;
+            top: 20px;
+            left: 10px;
+        }
+
+        .lastTextItem p {
+            color: rgb(76, 157, 203);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+        }
+
+        /*----------------------------------contentBox-one handdle in stylish ------------------------------------------ */
+        .contentBox-one {
+            padding: 10px 30px 10px 30px;
+        }
+
+        .contentBox-one label {
+            color: #ffffff;
+            display: flex;
+            font-size: 18px;
+            /* margin-bottom:30px; padding-bottom:30px; */
+        }
+
+        .contentBox-one label:nth-child(1) {
+            margin-top: 20px;
+        }
+
+        .contentBox-one label:nth-child(3) {
+            margin-top: 30px;
+        }
+
+        .contentBox-one label:nth-child(5) {
+            margin-top: 30px;
+        }
+
+        .contentBox-one i {
+            color: rgb(0, 247, 255);
+            margin-right: 10px;
+        }
+
+        /*-------------------------------------------- principleAmount-grp ----------------------------------------------------------------- */
+        .principleAmount-grp {
+            /* position: absolute; */
+            display: flex;
+            position: relative;
+            top: 10px;
+        }
+
+        .principleAmount-grp i {
+            /* border:1px solid rgba(0, 157, 255, 0.715); */
+            border-right: 1px solid rgba(0, 157, 255, 0.715);
+            background-color: rgba(0, 157, 255, 0.184);
+            border-radius: 0.5rem;
+            padding: 15px;
+            position: relative;
+            width: 50px;
+        }
+
+        .principleAmount-grp input {
+            background-color: rgba(0, 157, 255, 0.184);
+            border-radius: 0.5rem;
+            padding: 12px;
+            outline: none;
+            border: 1px solid rgba(0, 157, 255, 0.715);
+            width: 365px;
+            position: absolute;
+            padding-left: 60px;
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        /*--------------------------------------------- principleAmount-grp - End -------------------------------------- */
+        /*----------------------------------------------- InterestRate-grp ---------------------------------------------------- */
+        .InterestRate-grp {
+            display: flex;
+            position: relative;
+            top: 10px;
+        }
+
+        .InterestRate-grp i {
+            /* border:1px solid rgba(0, 157, 255, 0.715); */
+            border-right: 1px solid rgba(0, 157, 255, 0.715);
+            background-color: rgba(0, 157, 255, 0.184);
+            border-radius: 0.5rem;
+            padding: 15px;
+            position: relative;
+            width: 50px;
+        }
+
+        .InterestRate-grp input {
+            background-color: rgba(0, 157, 255, 0.184);
+            border-radius: 0.5rem;
+            padding: 12px;
+            outline: none;
+            border: 1px solid rgba(0, 157, 255, 0.715);
+            width: 365px;
+            position: absolute;
+            padding-left: 60px;
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        /*-------------------------------------------- InterestRate-grp - End ------------------------------------------------------------- */
+
+        /*----------------------------------------------- Time-t-grp ---------------------------------------------------- */
+        .Time-t-grp {
+            display: flex;
+            position: relative;
+            top:10px;
+        }
+
+        .Time-t-grp i {
+            /* border:1px solid rgba(0, 157, 255, 0.715); */
+            border-right: 1px solid rgba(0, 157, 255, 0.715);
+            background-color: rgba(0, 157, 255, 0.184);
+            border-radius: 0.5rem;
+            padding: 15px;
+            position: relative;
+            width: 50px;
+        }
+
+        .Time-t-grp input {
+            background-color: rgba(0, 157, 255, 0.184);
+            border-radius: 0.5rem;
+            padding: 12px;
+            outline: none;
+            border: 1px solid rgba(0, 157, 255, 0.715);
+            width: 365px;
+            position: absolute;
+            padding-left: 60px;
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        /*-------------------------------------------- Time-t-grp - End ------------------------------------------------------------- */
+        .Time-t-grp select {
+            position: relative;
+            left: 63.2%;
+            border-left: 1px solid rgba(0, 157, 255, 0.715);
+            background-color: rgba(0, 157, 255, 0.184);
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            /* padding:15px 30px 15px 30px; */
+            /* height; */
+
+            /* position: relative; width:100px; color:white; */
+            color: #ffffff;
+            outline: none;
+            border-right: none;
+            border-bottom: none;
+            border-top: none;
+            /* padding-left:20px; */
+            /* padding-inline:15px; */
+        }
+
+        .Time-t-grp select option {
+            background-color: rgb(0, 255, 60);
+            /* width:400px; */
+            height: 400px;
+             
+        }
+
+        #calculate-btn {
+            background: linear-gradient(135deg, #004cff, #00ffbf);
+            padding: 12px;
+            width: 365px;
+            border: 1px solid rgba(0, 200, 255, 0.184);
+            border-radius: .5rem;
+            margin-top: 30px;
+            color: #ffffff;
+            font-weight: bold;
+            border-left: none;
+            font-size: 18px;
+
+            /* transition:5s ease-in-out; */
+            &:hover {
+                background: linear-gradient(135deg, #0046eb, #00e7ad);
+                /* transform:translateY(-1px); transition:0.2s ease-in; */
+                cursor: pointer;
+
+            }
+        }
+
+        #calculate-btn i {
+            color: #ffffff;
+            font-size: 20px;
+        }
+        /* -----------------footer stylish ----------------------------------------------------------------------------- */
+        .footerText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 50px;
+}
+
+.savePlanGrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 10px 28px;
+
+    border: 2px solid #00e5ff;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(0, 229, 255, 0.12),
+        rgba(0, 255, 170, 0.12)
+    );
+
+    box-shadow:
+        0 0 10px #00e5ff,
+        0 0 25px rgba(0, 255, 200, 0.4);
+
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.savePlanGrow i {
+    color: #00ffa2;
+    font-size: 22px;
+    filter: drop-shadow(0 0 8px #00ffa2);
+}
+
+.savePlanGrow span {
+    background: linear-gradient(
+        90deg,
+        #00d9ff,
+        #00ffa2
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.savePlanGrow b {
+    color: #00e5ff;
+    text-shadow: 0 0 8px #00e5ff;
+}
+
+.line {
+    width: 90px;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00e5ff,
+        #00ffa2
+    );
+
+    box-shadow: 0 0 8px #00e5ff;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="containerBox">
+            <div class="contentBox-one">
+                <label for=""><i class="fa-solid fa-coins"></i>
+                    <p>Principal Amount (P) </p>
+                </label>
+                <div class="principleAmount-grp">
+                    <i class="fa-solid fa-indian-rupee-sign fa-canvas-square"></i>
+                    <input type="text" id="PrincipleAmount">
+
+
+                </div>
+                <label for=""><i class="fa-solid fa-percent fa-canvas-square"></i>
+                    <p>Rate of Interest (R) </p>
+                </label>
+                <div class="InterestRate-grp">
+                    <i class="fa-solid fa-percent fa-canvas-square"></i>
+                    <input type="text" id="InterestRate">
+                </div>
+
+                <label for=""><i class="fa-solid fa-calendar-days fa-canvas-square"></i>
+                    <p>Time (T) </p>
+                </label>
+                <div class="Time-t-grp">
+                    <i class="fa-solid fa-indian-rupee-sign fa-canvas-square"></i>
+                    <input type="text" id="TimeFill_YM">
+                    <select id="TimeUnit">
+                        <option value="year">Years</option>
+                        <option value="month">Months</option>
+                    </select>
+                    <!-- <button id="calculate-btn"><i class="fa-solid fa-calculator fa-canvas-square"></i> Calculate</button> -->
+                </div>
+
+                <button onclick="calculateSI()" id="calculate-btn"><i
+                        class="fa-solid fa-calculator fa-canvas-square"></i> Calculate</button>
+
+            </div>
+            <div class="contentBox-two">
+                <div id="header-result">
+                    <i class="fa-solid fa-signal fa-canvas-square"></i>
+                    <h2>Result</h2>
+                </div>
+                <div class="content-item">
+                    <label for="">Simple Interest (SI)</label>
+                    <h1 id="simpleInterest">₹0.00</h1>
+                    <label for="">Total Amount (A)</label>
+                    <h1 id="TotalAmountThis">₹0.00</h1>
+                    <label for=""><i class="fa-solid fa-lightbulb fa-canvas-square"></i> Formula</label>
+                    <div id="formulaBox">
+                        <h2>SI = (P × R × T) / 100</h2>
+                    </div>
+                    <div class="lastTextItem">
+                        <p>Whare,</p>
+                        <p>P = Principal Amount</p>
+                        <p>R = Rate of Interest (In %)</p>
+                        <p>T = Time (in Year)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerText">
+    <span class="line"></span>
+
+    <div class="savePlanGrow">
+        <i class="fa-solid fa-seedling"></i>
+        <span>Save</span>
+        <b>•</b>
+        <span>Plan</span>
+        <b>•</b>
+        <span>Grow</span>
+    </div>
+
+    <span class="line"></span>
+</div>
+    </header>
+    <script>
+        //  const clickBtnResult = document.getElementById("calculate-btn");
+        //  const PrincipalAmount = document.getElementById("PrincipleAmount-input");
+        //  const InterestRate_input = document.getElementById("PrincipleRate-input");
+        //  const monthYearInput = document.getElementById("PrincipleYearMonth-input");
+        //  const areTimeUnit = document.getElementById("TimeUnit").value;
+        //  let simpleInterest_SI = document.getElementById("simpleInterest");
+
+        //  if(PrincipalAmount || InterestRate_input || monthYearInput === true){
+        //     addEventListener("input",function(event){
+        //   PrincipalAmount = PrincipalAmount.replace(/[^0-9]/g, "");
+        //   InterestRate_input/value = InterestRate_input.value.replace(/[^0-9]/g, "");
+        //   monthYearInput = monthYearInput.replace(/[^0-9]/g, "");
+        //  });
+        //  }
+        // //  ----------------------------------------------------------------------------------
+        // // formula uing this code 
+
+        // clickBtnResult.addEventListener("click", () => {
+        //        let unit = document.querySelector("#TimeUnit").value;
+        // if (unit === "month") {
+        //     T = T / 12;
+        // };
+        //     //Simple Si formula using =====> Si = (P * R * T)/100;
+        //     simpleInterest_SI = (PrincipalAmount * InterestRate_input * monthYearInput) / 100;
+        //     console.log(simpleInterest_SI);
+        // });
+        arePrincipalAmount = document.getElementById("PrincipleAmount");
+        areInterestRate = document.getElementById("InterestRate");
+        areTimeFillYearMonth = document.getElementById("TimeFill_YM");
+        areTimeUnit = document.getElementById("TimeUnit");
+
+        // Only digit input
+        arePrincipalAmount.addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, "");
+        });
+
+        areInterestRate.addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, "");
+        });
+
+        areTimeFillYearMonth.addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, "");
+        });
+        function calculateSI() {
+
+            let arePrincipalAmount = document.getElementById("PrincipleAmount").value;
+            let areInterestRate = document.getElementById("InterestRate").value;
+            let areTimeFillYearMonth = document.getElementById("TimeFill_YM").value;
+            let areTimeUnit = document.getElementById("TimeUnit").value;
+            let areSimpleSi_Result = document.getElementById("simpleInterest");
+
+
+            if (areTimeUnit === "month") {
+                areTimeFillYearMonth = areTimeFillYearMonth / 12;
+            }
+            let SimpleSI = (arePrincipalAmount * areInterestRate * areTimeFillYearMonth) / 100;
+            areSimpleSi_Result.innerHTML = " <i class='fa-solid fa-indian-rupee-sign fa-canvas-square'></i>" + SimpleSI.toFixed(2);
+             let areTotal_Amount = (Number(arePrincipalAmount) + SimpleSI);
+            let TotalAmount_Result = document.getElementById("TotalAmountThis");
+            TotalAmount_Result.innerHTML = "<i class='fa-solid fa-indian-rupee-sign fa-canvas-square'></i>" + areTotal_Amount.toFixed(2);
+        };
+        // calculateSI();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GDP Deflator Calculator</title>
+    <style>
+        body{
+            background-color:black;
+        }
+        .box{
+            border:1px solid blue; display: inline-block; padding:10px; background-color:rgb(255, 255, 255); color:green;
+            box-shadow:-2px 2px 5px rgba(5, 43, 109, 0.173); margin:20px auto; left:500PX; position: relative; padding:20PX;
+            background-image:url("");
+        }label{
+            color:rgb(139, 0, 76); font-weight:bold;
+        }
+        input{
+            padding:5px; border:1px solid rgb(0, 79, 79); width:250px;
+            display: flex; position: relative; top:5px; padding:10px;
+        }
+        button{
+            padding:10px; width:270px; background-color:blueviolet; color:white; border:none;
+            &:hover{
+                 box-shadow:-2px 2px 5px rgb(0, 0, 0); transition:0.2s;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <h2 style="color: rgb(0, 30, 228); text-align:center;">GDP Deflator Calculator</h2>
+
+    <label>Nominal GDP:</label>
+    <input type="number" id="nominalGDP"><br><br>
+
+    <label>Real GDP :</label>
+    <input type="number" id="realGDP"><br><br>
+
+    <button onclick="calculateGDPDeflator()">Calculate</button>
+    <h3 id="result"></h3>
+    <h1 style="color:rgb(0, 178, 190); font-size:18px; text-align:center; border:1px solid silver;">------ MR Tutorials Gyan -----</h1>
+</div>
+    <script>
+        function calculateGDPDeflator() {
+            let nominal = Number(document.getElementById("nominalGDP").value);
+            let real = Number(document.getElementById("realGDP").value);
+
+            let gdpDeflator = (nominal / real) * 100;
+
+            document.getElementById("result").innerHTML =
+                "GDP Deflator = " + gdpDeflator.toFixed(2);
+                // document.write("<br>")
+                // document.write("<h1>MR Tutorials Gyan</h1>")
+        }
+    </script>
+
+</body>
+</html>

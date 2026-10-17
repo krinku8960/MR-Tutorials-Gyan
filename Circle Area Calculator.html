@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Area Calculator</title>
+    <style>
+        *{
+            margin: 0; padding: 0; box-sizing:border-box;
+        }
+        body{
+              background: linear-gradient(
+    180deg,
+    #00e1ff,
+    #93dbe9,
+    #ffffff
+); width:100%; background-size:cover; background-repeat:no-repeat; min-height:100vh;
+        }
+        nav {
+            border-bottom:1px solid rgb(255, 255, 255);
+            height:60px; color:#012558; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display:flex; align-items:center; padding-left:50px;
+           
+        }
+        nav h1{
+             text-transform: uppercase;
+        }
+        nav h1 img {
+            width:30px; height:30px; display:inline-flex; 
+            /* justify-content: center; align-items:center; */
+        }
+        .container {
+            width:700px; height:300px; border:1px solid white; margin:60px auto; border-radius:0.7rem;
+            background-color:#ffffff; box-shadow:1px 3px 8px rgba(0, 0, 0, 0.436);
+        }
+        /* .container .circleBox {
+            width:150px; height:150px; border:1px solid darkred; border-radius:50%;
+            position: relative; top:100px;
+        } */
+        .container img {
+            width:180px; height:180px; position: relative; top:30px; left:50px;
+            border-radius:50%;
+        }
+        .content{
+            display:inline-block; justify-content:right; align-items:right; position:relative; bottom:20px;
+            left:100px;
+
+            
+        }
+        .content input {
+            /* margin-bottom:10px; */
+            padding:10px; width:250px; border-radius:0.5rem; border:1px solid rgb(0, 0, 0);
+        }
+        #calcuteBtn {
+            border:1px solid darkblue; padding:10px; background-color:rgb(0, 157, 255); border-radius:0.4rem;
+            width:365px; top:20px; position: relative; color:rgb(237, 236, 236); font-size:16px;
+            &:hover {
+                cursor: pointer; background-color:rgb(0, 170, 255);
+                transform:translateY(-1px);
+                box-shadow:1px 2px 5px rgba(9, 149, 214, 0.552);
+            }
+        }
+        #result{
+            border:1px solid lightgreen; width:360px; height:40px; background-color:lightgreen;
+            /* display:flex; */ position: relative; top:50px; display:flex; align-items: center; padding-left:20px;
+            border-radius:0.5rem; color:gray;
+        }
+        .textFormula {
+            position: absolute;
+        }
+        .textFormula p{
+            position:relative; text-align: center; left:85px; padding:5px;
+            bottom:-20px; font-size:18px; color:#002908; font-weight:500;
+        }
+        #radius-imgInclude {
+            position: absolute; top:255px; 
+            display: block; left:420px;
+        }
+        #gappingThisItem{
+         position: relative; right:5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Circle Area Calculator</h1>
+        </nav>
+        <h1 style="color:#012558; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; text-align:center; position: relative; top:40px;">CALCULATE AREA OF A CIRCLE</h1>
+        <div class="container">
+            <p id="radius-imgInclude">r =</p>
+           <img src="file:///D:/javaScript%20Advance%20Tutorials/images/WhatsApp_Image_2026-09-13_at_3.29.36_PM-removebg-preview.png">
+          <div class="textFormula">
+             <p>A=πr2</p>
+           <p>π = 3.14159</p>
+          </div>
+            <div class="content">
+                <label>Enter Radius (r) :</label>
+                <input type="text" id="inputFillRadius"><br>
+                <button id="calcuteBtn">CALCULATE AREA</button>
+                <p id="result" aria-disabled="true">None</p>
+            </div>
+        </div>
+    </header>
+    <script>
+        let radiusPrintTopImg = document.getElementById("radius-imgInclude");
+        let areCalculateBtn = document.getElementById("calcuteBtn");
+        let areInputFiliBox = document.getElementById("inputFillRadius");
+        let areResultPrint = document.getElementById("result");
+        // let areIncldeThistext = document.getn
+    //  
+    areInputFiliBox.addEventListener("input",function(){
+        radiusPrintTopImg.textContent = "r = " + areInputFiliBox.value
+    })
+        areCalculateBtn.addEventListener("click",() =>{
+    //  let radius = areResultPrint.innerHTML = Math.PI * (areInputFiliBox.value ** 2);
+        // return radius;
+        let radius = areInputFiliBox.value;
+           if (radius <= 0 || isNaN(radius)) {
+        areResultPrint.textContent = "Please enter a valid radius";
+        return;
+    }
+
+    const area = Math.PI * radius ** 2;
+    areResultPrint.innerHTML = `<strong><p id="gappingThisItem">Result : </p> </strong> Area(A) = ${area.toFixed(2)} Squre Unit`;
+    areResultPrint.style.color = "black"
+        //    A=πr2
+        // areCalculateBtn.addEventListener("keydown",function(event){
+        //     if(event.key === "Enter") {
+        //         console.log(areResultPrint);
+        //     }
+        // })
+        });
+    </script>
+</body>
+</html>

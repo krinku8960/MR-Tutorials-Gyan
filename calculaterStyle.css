@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    box-sizing: border-box;
+    background:url("file:///D:/netflix%20website%20clone/profiloWebsite/projectFile/881107.jpg");
+    background-size:cover; background-repeat:no-repeat; overflow-y:hidden;
+    background-blend-mode:multiply;
+/* background: linear-gradient(to right, white, green); */
+background-color:rgb(30, 255, 0);
+}
+.calculator {
+    border:2px solid cyan; width:400px; height:480px; margin:50px auto;
+    background-color:rgb(0, 0, 0); border-radius:20px; padding:20px; box-shadow:-1px 5px 15px rgb(255, 255, 255);
+}
+
+#display{
+    width:85%; margin:20px auto; display: flex; padding:10px; height:40px; outline:none; font-size:25px; border:2px groove white; background-color:rgba(0, 255, 13, 0.267);
+    text-align:right; color:rgb(210, 210, 210); border-radius:5px; font-size:40px;
+}
+#display::placeholder{
+    text-align:right; font-family: "JetBrains Mono", monospace; font-size:40px; color:rgba(128, 128, 128, 0.748);
+
+}
+button{
+    padding:20px; display: inline-block; width:76px; height:60px; display:inline-flex; justify-content:center; align-items:center; margin:5px 8px 5px 8px;
+    border-radius:10px; font-size:20px; color:#ffffff; font-weight:bold;
+    position:relative; left:12px;
+}
+button:nth-child(1){
+    background-color:rgb(255, 0, 0);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(2){
+    background-color:rgb(255, 0, 0);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+
+}
+button:nth-child(3){
+    background-color:rgb(255, 0, 0);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+
+}
+button:nth-child(4){
+    background-color:rgb(1, 203, 214);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+    font-size:25px;
+
+}
+button:nth-child(5){
+    background-color:rgb(71, 71, 71);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(6){
+    background-color:rgb(71, 71, 71);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(7){
+    background-color:rgb(71, 71, 71);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(8){
+    background-color:rgb(1, 203, 214);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+    font-size:25px;
+}
+button:nth-child(9){
+    background-color:rgb(71, 71, 71);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(10){
+    background-color:rgb(71, 71, 71);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(11){
+    background-color:rgb(71, 71, 71);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(12){
+    background-color:rgb(1, 203, 214);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+    font-size:25px;
+}
+button:nth-child(13){
+    background-color:rgb(71, 71, 71);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(14){
+    background-color:rgb(71, 71, 71);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(15){
+    background-color:rgb(71, 71, 71);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(16){
+    background-color:rgb(1, 203, 214);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+    font-size:25px;
+}
+button:nth-child(17){
+    background-color:rgb(71, 71, 71);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(18){
+    background-color:rgb(71, 71, 71);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(19){
+    background-color:rgb(71, 71, 71);
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+}
+button:nth-child(20){
+    background:url("file:///D:/netflix%20website%20clone/profiloWebsite/imageItem/fb3a9120-7210-42bb-8d96-f8d9a35928dc-removebg-preview.png");
+    background-size:contain;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-color:rgba(1, 203, 214, 0.173);
+    background-blend-mode:multiply;
+    box-shadow:5px 5px 10px rgb(187, 187, 187);
+    font-size:25px;
+     /* animation:borderColor 3s linear infinite; */
+     /* border:1px solid black; */
+
+}
+
+/* @keyframes borderColor{
+    0%{
+        border-color:#00ffff;
+    }
+    25%{
+        border-color:#00ff66;
+    }
+    50%{
+        border-color:#ff00ff;
+    }
+    75%{
+        border-color:#ff9900;
+    }
+    100%{
+        border-color:#00ffff;
+    }
+}
+Neon Border Effect
+.box{
+    border:3px solid #00ffff;
+    animation:neonBorder 2s linear infinite;
+}
+
+@keyframes neonBorder{
+    0%{
+        border-color:#00ffff;
+        box-shadow:0 0 10px #00ffff;
+    }
+    25%{
+        border-color:#00ff66;
+        box-shadow:0 0 15px #00ff66;
+    }
+    50%{
+        border-color:#ff00ff;
+        box-shadow:0 0 15px #ff00ff;
+    }
+    75%{
+        border-color:#ff9900;
+        box-shadow:0 0 15px #ff9900;
+    }
+    100%{
+        border-color:#00ffff;
+        box-shadow:0 0 10px #00ffff;
+    }
+} */
+
+
+/* This creates a smooth, continuously changing neon border that's ideal for dark-themed websites and portfolios. */

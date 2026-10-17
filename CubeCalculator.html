@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cube Calculator</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:#0f1117;color:#fff}
+.cube-container{width:350px;padding:30px;background:#1a1d26;border:1px solid #303442;border-radius:20px;box-shadow:0 10px 35px #0006;text-align:center}
+h2{font-size:27px;margin-bottom:10px;color:#8b9cff}
+p{color:#a5a9b8;font-size:14px;margin-bottom:25px}
+input{width:100%;padding:15px;margin-bottom:15px;background:#10131b;border:1px solid #383d4e;border-radius:10px;color:#fff;font-size:20px;outline:none;text-align:center}
+input:focus{border-color:#8b9cff}
+button{width:100%;padding:14px;border:none;border-radius:10px;background:#6677ff;color:#fff;font-size:17px;font-weight:bold;cursor:pointer;transition:.3s}
+button:hover{background:#4f60e8;transform:translateY(-2px)}
+.result{margin-top:22px;padding:18px;background:#10131b;border-radius:12px;border:1px solid #303442}
+.result h3{font-size:15px;color:#a5a9b8;margin-bottom:10px}
+#answer{font-size:30px;color:#70f0b5;font-weight:bold;overflow-wrap:anywhere}
+.formula{margin-top:15px;font-size:14px;color:#a5a9b8}
+.clear{margin-top:12px;background:#303442}
+.clear:hover{background:#41475a}
+</style>
+</head>
+<body>
+
+<div class="cube-container">
+<h2>Cube Calculator</h2>
+<p>Calculate the cube of any number</p>
+
+<input type="number" id="number" placeholder="Enter a number" step="any">
+
+<button onclick="calculateCube()">Calculate Cube (x³)</button>
+
+<div class="result">
+<h3>Your Result</h3>
+<div id="answer">0</div>
+<div class="formula" id="formula">Cube = Number × Number × Number</div>
+</div>
+
+<button class="clear" onclick="clearCalculator()">Clear</button>
+</div>
+
+<script>
+const numberInput=document.getElementById("number");
+const answer=document.getElementById("answer");
+const formula=document.getElementById("formula");
+
+function calculateCube(){
+const value=numberInput.value.trim();
+
+if(value===""){
+answer.textContent="Enter a number";
+formula.textContent="Please enter a valid number";
+return;
+}
+
+const number=Number(value);
+const cube=number*number*number;
+
+if(!Number.isFinite(cube)){
+answer.textContent="Number too large";
+formula.textContent="Please enter a smaller number";
+return;
+}
+
+answer.textContent=Number(cube.toPrecision(12)).toLocaleString("en-US",{maximumFractionDigits:10});
+formula.textContent=number+" × "+number+" × "+number+" = "+cube;
+}
+
+function clearCalculator(){
+numberInput.value="";
+answer.textContent="0";
+formula.textContent="Cube = Number × Number × Number";
+numberInput.focus();
+}
+
+numberInput.addEventListener("keydown",function(event){
+if(event.key==="Enter")calculateCube();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .outerBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 00px;
+            border: 1px solid rgb(231, 231, 236);
+            width: 900px;
+            height: 500px;
+            margin: 20px auto;
+            background: linear-gradient(135deg, #020024, #090979, #001f3f);
+            border-radius: 0px 200px;
+            transition: 5s ease-in-out;
+            animation: myAnimation 3s linear infinite alternate;
+
+        }
+
+        @keyframes myAnimation {
+            20% {
+                background: linear-gradient(135deg, #1a0500, #8b2600, #ff6a00);
+
+            }
+
+            40% {
+                background: linear-gradient(135deg, #020024, #090979, #00d4ff);
+            }
+
+            60% {
+                background: linear-gradient(135deg, #12002f, #4b006e, #ff00cc);
+            }
+
+            80% {
+                background: linear-gradient(135deg, #001a12, #006b4f, #00ff88);
+            }
+
+            100% {
+                border-radius: 200px 0px;
+                background: linear-gradient(135deg, #6d0071, #00ffa2b5, #006edd);
+            }
+        }
+
+        .innerBox {
+            border: 1px solid rgba(8, 219, 242, 0.165);
+            width: 300px;
+            height: 400px;
+            background-color: rgba(9, 30, 9, 0.398);
+            border-radius: 20px;
+            box-shadow: 1px 2px 20px rgba(16, 16, 16, 0.864);
+            /* transform:skew(200%); */
+            /* transform:skew(); */
+
+        }
+
+        .innerBox {
+            /* display:block;  */
+            position: relative;
+
+
+
+            /* gap:20px; */
+        }
+
+        .innerBox h2 {
+            text-align: center;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .innerBox label {
+            position: relative;
+            top: 30px;
+            left: 20px;
+            color: #ffffff;
+
+
+        }
+
+        .innerBox input {
+            width: 80%;
+            height: 20px;
+            padding: 10px;
+            margin-top: 40px;
+            left: 20px;
+            position: relative;
+            border-radius: 20px;
+            border: 1px solid rgb(60, 255, 0);
+            background-color: rgba(228, 239, 230, 0);
+            outline: 1px solid white;
+            color: #ffffff;
+
+            &:hover {
+                outline: 1px solid rgb(0, 233, 0);
+                box-shadow: 1px 2px 10px rgba(60, 255, 0, 0.252);
+                /* transform:scale(1.01); */
+                transition: 0.5s;
+            }
+        }
+
+        #calculate-btn {
+            border: 1px solid lime;
+            height: 42px;
+            padding: 10px;
+            width: 87%;
+            position: relative;
+            left: 20px;
+            border-radius: 20px;
+            top: 20px;
+            background-color: lime;
+            color: #ffffff;
+            font-weight: 600;
+            cursor: pointer;
+
+            &:hover {
+                transform: translateY(-1px);
+                transition: 0.1s;
+                box-shadow: 1px 2px 10px rgb(5, 37, 0);
+                transform: skew(360deg);
+            }
+        }
+        #result {
+            text-align:center; color:#ffffff; position: relative; top:30px;
+            /* border-bottom:2px solid blue; display:inline-flex; justify-content:center; align-items:center; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outerBox">
+        <div class="innerBox">
+            <h2>BMI Calculator</h2>
+            <label for="weight"> Weight:</label>
+            <input type="text" id="weight" placeholder="Enter weight (kg)">
+
+            <label for="height">Height :</label>
+            <input type="text" id="height" placeholder="Enter height e.g. 5'4">
+            <button id="calculate-btn" onclick=" convertHeight()">BMI Calculate</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+//         let areWeight = document.getElementById("weight");
+//         // let areHeight = document.getElementById("height");
+//         const areClickBtnCalculate = document.getElementById("calculate-btn");
+//        let height = document.getElementById("height").value;
+
+//     // Remove ' and " symbols
+//     areClickBtnCalculate.addEventListener("click",function(){
+//         height = height.replace(/['"]/g, " ");
+
+//     // Split feet and inch
+//     let parts = height.trim().split(/\s+/);
+
+//     let feet = Number(parts[0]);
+//     let inch = Number(parts[1]);
+
+//     // Convert to meters
+//     let totalInches = (feet * 12) + inch;
+//     let meter = totalInches * 0.0254;
+//     console.log(meter)
+// document.getElementById("result").innerHTML =
+//         `Height = ${meter.toFixed(2)} meters`;
+//     });
+function convertHeight() {
+    const weight = Number(document.getElementById("weight").value);
+    const heightInput = document.getElementById("height").value;
+    const result = document.getElementById("result");
+
+    if (!weight || !heightInput) {
+        result.textContent = "Please enter weight and height.";
+        return;
+    }
+
+    const heightParts = heightInput.replace(/['"]/g, " ").split(/[.\s]+/);
+
+    const feet = Number(heightParts[0]);
+    const inches = Number(heightParts[1] || 0);
+
+    const totalInches = feet * 12 + inches;
+    const heightMeters = totalInches * 0.0254;
+    const bmi = weight / (heightMeters * heightMeters);
+
+    result.textContent = `Your BMI is ${bmi.toFixed(2)}`;
+}
+
+document.getElementById("weight").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        convertHeight();
+    }
+});
+
+document.getElementById("height").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        convertHeight();
+    }
+});
+// let bmi = weight / (heightMeter * heightMeter);
+
+
+
+    
+    </script>
+</body>
+
+</html>

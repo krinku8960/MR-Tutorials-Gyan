@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Weather App</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#090e1a;color:#fff;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+.weather-app{width:100%;max-width:900px;background:linear-gradient(145deg,#151e30,#0d1422);border:1px solid #26334a;border-radius:25px;padding:30px;box-shadow:0 20px 60px #0006}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.header h1{font-size:25px;color:#fff}
+.header h1 span{color:#65b8ff}
+.header p{font-size:12px;color:#8594ad;margin-top:7px}
+.search-box{display:flex;gap:10px;margin-bottom:25px}
+.search-box input{width:100%;min-width:0;background:#1b263a;border:1px solid #30415e;padding:14px 16px;border-radius:12px;color:white;font-size:15px;outline:none}
+.search-box input:focus{border-color:#65b8ff}
+.search-box button{background:#65b8ff;color:#08111e;border:none;padding:0 22px;border-radius:12px;font-weight:bold;cursor:pointer;transition:.3s}
+.search-box button:hover{background:#8dcbff;transform:translateY(-2px)}
+.main-weather{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+.weather-card{background:linear-gradient(135deg,#1c2b43,#142036);border:1px solid #2b3c58;border-radius:20px;padding:25px}
+.location{font-size:20px;font-weight:bold}
+.date{font-size:13px;color:#93a4bd;margin-top:8px}
+.temperature-area{display:flex;align-items:center;justify-content:space-between;margin-top:25px}
+.temperature{font-size:65px;font-weight:bold;letter-spacing:-3px}
+.weather-icon{font-size:65px;filter:drop-shadow(0 5px 12px #65b8ff33)}
+.condition{color:#a9bdd8;font-size:15px;margin-top:5px}
+.feels{color:#879ab5;font-size:13px;margin-top:12px}
+.details-title{font-size:17px;margin-bottom:18px}
+.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.detail{background:#1b2a40;padding:18px 12px;border-radius:14px;border:1px solid #2b3c55}
+.detail .icon{font-size:22px;margin-bottom:12px}
+.detail .label{font-size:12px;color:#93a4bd}
+.detail .value{font-size:19px;font-weight:bold;margin-top:7px}
+.forecast-title{font-size:19px;margin:28px 0 16px}
+.forecast{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.forecast-item{background:#19253a;border:1px solid #2b3c55;padding:18px 8px;text-align:center;border-radius:15px;transition:.3s}
+.forecast-item:hover{transform:translateY(-4px);border-color:#65b8ff}
+.forecast-item .day{font-size:12px;color:#a2b2ca}
+.forecast-item .emoji{font-size:27px;margin:13px 0}
+.forecast-item .temp{font-size:14px;font-weight:bold}
+.forecast-item .rain{font-size:11px;color:#65b8ff;margin-top:8px}
+.message{text-align:center;color:#91a4c1;font-size:13px;margin-top:20px;min-height:16px}
+.footer{text-align:center;color:#64758f;font-size:11px;margin-top:22px}
+@media(max-width:600px){body{padding:12px;align-items:flex-start}.weather-app{padding:18px;border-radius:20px;margin-top:10px}.header h1{font-size:21px}.main-weather{grid-template-columns:1fr}.weather-card{padding:20px}.temperature{font-size:56px}.weather-icon{font-size:55px}.forecast{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.forecast-item{padding:13px 3px}.forecast-item .emoji{font-size:22px}.forecast-item .temp{font-size:12px}.forecast-item .rain{font-size:10px}.search-box button{padding:0 15px}}
+</style>
+</head>
+<body>
+<div class="weather-app">
+    <div class="header">
+        <div>
+            <h1>Weather<span>ly.</span></h1>
+            <p>YOUR PERSONAL WEATHER DASHBOARD</p>
+        </div>
+        <div style="font-size:27px">🌙</div>
+    </div>
+
+    <form class="search-box" id="searchForm">
+        <input type="text" id="cityInput" placeholder="Search city, e.g. Lucknow" value="Lucknow" aria-label="Search city" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <div class="main-weather">
+        <div class="weather-card">
+            <div class="location" id="cityName">Lucknow, India</div>
+            <div class="date" id="currentDate">Loading date...</div>
+            <div class="temperature-area">
+                <div>
+                    <div class="temperature" id="temperature">--°</div>
+                    <div class="condition" id="condition">Loading weather...</div>
+                </div>
+                <div class="weather-icon" id="weatherIcon">🌤️</div>
+            </div>
+            <div class="feels" id="feelsLike">Feels like --°C</div>
+        </div>
+
+        <div class="weather-card">
+            <h2 class="details-title">Weather Details</h2>
+            <div class="details-grid">
+                <div class="detail">
+                    <div class="icon">💧</div>
+                    <div class="label">Humidity</div>
+                    <div class="value" id="humidity">--%</div>
+                </div>
+                <div class="detail">
+                    <div class="icon">💨</div>
+                    <div class="label">Wind Speed</div>
+                    <div class="value" id="wind">-- km/h</div>
+                </div>
+                <div class="detail">
+                    <div class="icon">🌡️</div>
+                    <div class="label">Feels Like</div>
+                    <div class="value" id="feelsDetail">--°C</div>
+                </div>
+                <div class="detail">
+                    <div class="icon">☁️</div>
+                    <div class="label">Cloud Cover</div>
+                    <div class="value" id="clouds">--%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="forecast-title">5-Day Forecast</h2>
+    <div class="forecast" id="forecast">
+        <div class="forecast-item">Loading...</div>
+    </div>
+
+    <div class="message" id="message" role="status" aria-live="polite"></div>
+    <div class="footer">Weather data by Open-Meteo · Made with ❤️</div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+
+function weatherInfo(code){
+    if(code===0)return ["Clear Sky","☀️"];
+    if(code===1)return ["Mainly Clear","🌤️"];
+    if(code===2)return ["Partly Cloudy","⛅"];
+    if(code===3)return ["Overcast","☁️"];
+    if([45,48].includes(code))return ["Foggy","🌫️"];
+    if([51,53,55,56,57].includes(code))return ["Drizzle","🌦️"];
+    if([61,63,65,66,67,80,81,82].includes(code))return ["Rainy","🌧️"];
+    if([71,73,75,77,85,86].includes(code))return ["Snowy","❄️"];
+    if([95,96,99].includes(code))return ["Thunderstorm","⛈️"];
+    return ["Cloudy","☁️"];
+}
+
+function formatDate(date){
+    return date.toLocaleDateString("en-IN",{weekday:"long",day:"numeric",month:"long"});
+}
+
+async function loadWeather(city){
+    $("message").textContent="Fetching weather data...";
+    $("forecast").innerHTML="";
+    try{
+        const geoResponse=await fetch("https://geocoding-api.open-meteo.com/v1/search?name="+encodeURIComponent(city)+"&count=1&language=en&format=json");
+        if(!geoResponse.ok)throw new Error("City search failed. Please try again.");
+        const geoData=await geoResponse.json();
+        if(!geoData.results?.length)throw new Error("City not found. Please check the spelling.");
+
+        const place=geoData.results[0];
+        const location=[place.name,place.admin1,place.country].filter((v,i,a)=>v&&a.indexOf(v)===i).join(", ");
+        const url="https://api.open-meteo.com/v1/forecast?latitude="+place.latitude+"&longitude="+place.longitude+"&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,cloud_cover,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=auto&forecast_days=5";
+        const response=await fetch(url);
+        if(!response.ok)throw new Error("Weather data unavailable. Please try again later.");
+        const data=await response.json();
+        const c=data.current,d=data.daily;
+        const info=weatherInfo(c.weather_code);
+
+        $("cityName").textContent=location;
+        $("currentDate").textContent=formatDate(new Date(c.time));
+        $("temperature").textContent=Math.round(c.temperature_2m)+"°";
+        $("condition").textContent=info[0];
+        $("weatherIcon").textContent=info[1];
+        $("feelsLike").textContent="Feels like "+Math.round(c.apparent_temperature)+"°C";
+        $("humidity").textContent=c.relative_humidity_2m+"%";
+        $("wind").textContent=Math.round(c.wind_speed_10m)+" km/h";
+        $("feelsDetail").textContent=Math.round(c.apparent_temperature)+"°C";
+        $("clouds").textContent=c.cloud_cover+"%";
+
+        $("forecast").innerHTML=d.time.map((day,i)=>{
+            const f=weatherInfo(d.weather_code[i]);
+            const label=i===0?"Today":new Date(day+"T12:00:00").toLocaleDateString("en-US",{weekday:"short"});
+            return `<div class="forecast-item"><div class="day">${label}</div><div class="emoji">${f[1]}</div><div class="temp">${Math.round(d.temperature_2m_max[i])}° / ${Math.round(d.temperature_2m_min[i])}°</div><div class="rain">🌧 ${d.precipitation_probability_max[i]??0}%</div></div>`;
+        }).join("");
+        $("message").textContent="Weather updated successfully.";
+    }catch(error){
+        $("message").textContent=error.message||"Something went wrong. Please try again.";
+        $("forecast").innerHTML='<div class="forecast-item">Forecast unavailable</div>';
+    }
+}
+
+$("searchForm").addEventListener("submit",event=>{
+    event.preventDefault();
+    const city=$("cityInput").value.trim();
+    if(city)loadWeather(city);
+});
+
+$("currentDate").textContent=formatDate(new Date());
+loadWeather("Lucknow");
+</script>
+</body>
+</html>
