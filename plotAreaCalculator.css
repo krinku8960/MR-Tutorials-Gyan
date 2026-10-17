@@ -9,29 +9,21 @@ body {
     min-height: 100vh;
     margin: 0;
     box-sizing: border-box;
-    
+
     background:
-        radial-gradient(
-            circle at 15% 90%,
+        radial-gradient(circle at 15% 90%,
             rgba(0, 238, 255, 0.16),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 85% 15%,
+            transparent 32%),
+        radial-gradient(circle at 85% 15%,
             rgba(150, 0, 255, 0.14),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 50% 50%,
+            transparent 35%),
+        radial-gradient(circle at 50% 50%,
             rgba(0, 100, 255, 0.06),
-            transparent 45%
-        ),
-        linear-gradient(
-            115deg,
+            transparent 45%),
+        linear-gradient(115deg,
             #010615 0%,
             #020b24 50%,
-            #01051a 100%
-        );
+            #01051a 100%);
 
     border: 2px solid #1b2a43;
 
@@ -434,7 +426,7 @@ body {
     height: 500px;
     border: 1px solid transparent;
     border-radius: 20px;
-    
+
     background:
         linear-gradient(#080b14, #080b14) padding-box,
         linear-gradient(120deg, #00ffff, #ff00fb) border-box;
@@ -559,9 +551,11 @@ body {
     height: 120px;
     /* ------------------------------------------------ calculator btn stylish in ---------------------------------------------------- */
 }
+
 .calculateAreaResult-Btn {
-    display:flex;
+    display: flex;
 }
+
 .calculateAreaResult-Btn button {
     border: 1px solid transparent;
     border-radius: 15px;
@@ -576,7 +570,8 @@ body {
     margin: 25px 0px 0px 25px;
     cursor: pointer;
     font-size: 18px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
 
     transition: background 0.5s ease;
 }
@@ -586,10 +581,11 @@ body {
         /* linear-gradient(120deg, #ff00fb, #00ffff) padding-box, */
         linear-gradient(120deg, #ff00fb, #00ffff) border-box;
 }
-.calculateAreaResult-Btn button:nth-child(2){
+
+.calculateAreaResult-Btn button:nth-child(2) {
     width: 190px;
-   border: 1px solid transparent;
-    border-radius: 15px;    
+    border: 1px solid transparent;
+    border-radius: 15px;
     background:
         linear-gradient(#080b14, #080b14) padding-box,
         linear-gradient(120deg, #00ffff, #ff00fb) border-box;
@@ -598,76 +594,98 @@ body {
 /*-------------------------------------------- calculator Btn End --------------------------------------------- */
 
 /*-------------------------------------------  arrow icon this stylish ----------------------------- */
-.ForntInputBox_one .arrowDownup{
-    display:flex;
+.ForntInputBox_one .arrowDownup {
+    display: flex;
 }
-.ForntInputBox_one .arrowDownup p{
-    margin:22px 20px 5px 0px; font-size:16px; 
-    color:#ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:600;
-    
-}
-.ForntInputBox_one .arrowDownup i{
-    color:cyan;
-text-shadow: 0 0 10px #00ffff, 0 0 25px #00ffff, 0 0 50px #00ffff;
-font-weight:600;
-        font-size:30px;
-         margin:20px 20px 5px 20px;
-    
-}
-.backInputBox_two .arrow-down{
-    display:flex;
+
+.ForntInputBox_one .arrowDownup p {
+    margin: 22px 20px 5px 0px;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
 
 }
-.backInputBox_two .arrow-down p{
-    margin:22px 20px 5px 0px; font-size:16px; 
-    color:#ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:600;
+
+.ForntInputBox_one .arrowDownup i {
+    color: cyan;
+    text-shadow: 0 0 10px #00ffff, 0 0 25px #00ffff, 0 0 50px #00ffff;
+    font-weight: 600;
+    font-size: 30px;
+    margin: 20px 20px 5px 20px;
+
 }
-.backInputBox_two .arrow-down i{
-    font-size:30px;
-      color: #bf00ff;
+
+.backInputBox_two .arrow-down {
+    display: flex;
+
+}
+
+.backInputBox_two .arrow-down p {
+    margin: 22px 20px 5px 0px;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+.backInputBox_two .arrow-down i {
+    font-size: 30px;
+    color: #bf00ff;
     text-shadow:
         0 0 5px #bf00ff,
         0 0 10px #bf00ff,
         0 0 20px #bf00ff,
         0 0 40px #bf00ff,
         0 0 60px #bf00ff;
-         margin:20px 20px 5px 20px;
+    margin: 20px 20px 5px 20px;
 }
+
 .leftInputBox_three .arrow-left {
-    display:flex;
+    display: flex;
 }
-.leftInputBox_three .arrow-left p{
-       margin:22px 20px 5px 0px; font-size:16px; 
-    color:#ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:600;
+
+.leftInputBox_three .arrow-left p {
+    margin: 22px 20px 5px 0px;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
 }
-.leftInputBox_three .arrow-left i{
-    font-size:30px;
-     color:lime;
+
+.leftInputBox_three .arrow-left i {
+    font-size: 30px;
+    color: lime;
     text-shadow:
         0 0 5px lime,
         0 0 10px lime,
         0 0 20px lime,
         0 0 40px lime;
-       margin:20px 20px 5px 20px;
+    margin: 20px 20px 5px 20px;
 }
 
-.rightInputBox_four .arrow-right{
-    display:flex;
+.rightInputBox_four .arrow-right {
+    display: flex;
 }
-.rightInputBox_four .arrow-right p{
-        margin:22px 20px 5px 0px; font-size:16px; 
-    color:#ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:600;
+
+.rightInputBox_four .arrow-right p {
+    margin: 22px 20px 5px 0px;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
 }
-.rightInputBox_four .arrow-right i{
-    font-size:25px;
-     color: #ffff00;
+
+.rightInputBox_four .arrow-right i {
+    font-size: 25px;
+    color: #ffff00;
     text-shadow:
         0 0 5px #ffff00,
         0 0 10px #ffff00,
         0 0 20px #ffff00,
         0 0 40px #ffff00,
         0 0 60px #ffff00;
-         margin:20px 20px 5px 20px;
+    margin: 20px 20px 5px 20px;
 }
 
 /*----------------------------------------------- arrow stylish end this style ------------------------------------ */
@@ -675,252 +693,431 @@ font-weight:600;
 /*------------------------------------------------- input one box stylish in ---------------------------- */
 
 .ForntInputBox_one input {
-    padding:10px; position: relative; top:10px;
-    left:20px; background:linear-gradient(#080b14, #080b14) padding-box;
-    transition:0.5s ease-in-out;
-     border: 1px solid transparent;
+    padding: 10px;
+    position: relative;
+    top: 10px;
+    left: 20px;
+    background: linear-gradient(#080b14, #080b14) padding-box;
+    transition: 0.5s ease-in-out;
+    border: 1px solid transparent;
     border-radius: 5px;
     background:
         linear-gradient(#080b14, #080b14) padding-box,
         linear-gradient(120deg, #00ffff, #00ccff) border-box;
-        width:82%; color:cyan; font-size:15px; outline:none;
-        &:hover {
-              border: 1px solid transparent;
-    border-radius: 5px; border:1px solid cyan;
-        }
+    width: 82%;
+    color: cyan;
+    font-size: 15px;
+    outline: none;
+
+    &:hover {
+        border: 1px solid transparent;
+        border-radius: 5px;
+        border: 1px solid cyan;
+    }
 
 }
-.ForntInputBox_one input::placeholder{
-    color:cyan; font-size:18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:500;
-    text-align:right;
+
+.ForntInputBox_one input::placeholder {
+    color: cyan;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    text-align: right;
 }
+
 /*------------------------------------------------- input one box end stylish in ----------------------------   */
 
 
 /*------------------------------------------------- input two box stylish in ---------------------------- */
 
 .backInputBox_two input {
-    padding:10px; position: relative; top:10px;
-    left:20px; background:linear-gradient(#080b14, #080b14) padding-box;
-    transition:0.5s ease-in-out;
-     border: 1px solid transparent;
+    padding: 10px;
+    position: relative;
+    top: 10px;
+    left: 20px;
+    background: linear-gradient(#080b14, #080b14) padding-box;
+    transition: 0.5s ease-in-out;
+    border: 1px solid transparent;
     border-radius: 5px;
     background:
         linear-gradient(#080b14, #080b14) padding-box,
-        linear-gradient(120deg, #00ffff, #00ccff) border-box; outline:none;
-        width:82%; color:cyan;  font-size:15px; &:hover {
-              border: 1px solid transparent;
-    border-radius: 5px; border:1px solid rgb(255, 0, 255);
-        }
+        linear-gradient(120deg, #00ffff, #00ccff) border-box;
+    outline: none;
+    width: 82%;
+    color: cyan;
+    font-size: 15px;
+
+    &:hover {
+        border: 1px solid transparent;
+        border-radius: 5px;
+        border: 1px solid rgb(255, 0, 255);
+    }
 
 }
-.backInputBox_two input::placeholder{
-    color:cyan; font-size:18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:500;
-    text-align:right;
+
+.backInputBox_two input::placeholder {
+    color: cyan;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    text-align: right;
 }
+
 /*------------------------------------------------- input two box end stylish in ----------------------------   */
 
 /*------------------------------------------------- input three box stylish in ---------------------------- */
 
 .leftInputBox_three input {
-    padding:10px; position: relative; top:10px;
-    left:20px; background:linear-gradient(#080b14, #080b14) padding-box;
+    padding: 10px;
+    position: relative;
+    top: 10px;
+    left: 20px;
+    background: linear-gradient(#080b14, #080b14) padding-box;
 
-     border: 1px solid transparent;
-    border-radius: 5px; transition:0.5s ease-in-out;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: 0.5s ease-in-out;
     background:
         linear-gradient(#080b14, #080b14) padding-box,
-        linear-gradient(120deg, #00ffff, #00ccff) border-box; outline:none;
-        width:82%; color:cyan;  font-size:15px; &:hover {
-              border: 1px solid transparent;
-    border-radius: 5px;    
-    border:1px solid lime; transition:0.5s ;
+        linear-gradient(120deg, #00ffff, #00ccff) border-box;
+    outline: none;
+    width: 82%;
+    color: cyan;
+    font-size: 15px;
+
+    &:hover {
+        border: 1px solid transparent;
+        border-radius: 5px;
+        border: 1px solid lime;
+        transition: 0.5s;
         /* transition:1s;  */
-        }
+    }
 
 }
-.leftInputBox_three input::placeholder{
-    color:cyan; font-size:18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:500;
-    text-align:right;
+
+.leftInputBox_three input::placeholder {
+    color: cyan;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    text-align: right;
 }
+
 /*------------------------------------------------- input three box end stylish in ----------------------------   */
 
 /*------------------------------------------------- input four box stylish in ---------------------------- */
 
 .rightInputBox_four input {
-    padding:10px; position: relative; top:10px;
-    left:20px; background:linear-gradient(#080b14, #080b14) padding-box; transition:0.5s ease-in-out;
-     border: 1px solid transparent;  border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    top: 10px;
+    left: 20px;
+    background: linear-gradient(#080b14, #080b14) padding-box;
+    transition: 0.5s ease-in-out;
+    border: 1px solid transparent;
+    border-radius: 5px;
     background:
         linear-gradient(#080b14, #080b14) padding-box,
-        linear-gradient(120deg, #00ffff, #00ccff) border-box; outline:none;
-        width:82%; color: cyan; font-size:15px; &:hover {
-              border: 1px solid transparent;
-    border-radius: 5px;
-    border:1px solid yellow;
-        }
+        linear-gradient(120deg, #00ffff, #00ccff) border-box;
+    outline: none;
+    width: 82%;
+    color: cyan;
+    font-size: 15px;
+
+    &:hover {
+        border: 1px solid transparent;
+        border-radius: 5px;
+        border: 1px solid yellow;
+    }
 
 }
-.rightInputBox_four input::placeholder{
-    color:cyan; font-size:18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:500;
-    text-align:right;  opacity: 1;
+
+.rightInputBox_four input::placeholder {
+    color: cyan;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    text-align: right;
+    opacity: 1;
 }
+
 /*------------------------------------------------- input four box end stylish in ----------------------------   */
 
 /* -------------------------------------------------- contentBox_two style Result contaienr Box------------------ */
 
 .contentBox_two .fontAwesomeIcon {
-    display:flex; margin:30px; 
+    display: flex;
+    margin: 30px;
 }
-.contentBox_two .fontAwesomeIcon i{
-    color:cyan; text-shadow: 0 0 10px #00ffff, 0 0 25px #00ffff, 0 0 50px #00ffff;
-    padding-right:20px;
-    font-size:35px;
+
+.contentBox_two .fontAwesomeIcon i {
+    color: cyan;
+    text-shadow: 0 0 10px #00ffff, 0 0 25px #00ffff, 0 0 50px #00ffff;
+    padding-right: 20px;
+    font-size: 35px;
 }
-.contentBox_two .fontAwesomeIcon p{
-    color:#ffffff; font-size:20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight:600;
+
+.contentBox_two .fontAwesomeIcon p {
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
 }
+
 .contetResultPlotingimg {
-    display:flex;
+    display: flex;
 }
-.contetResultPlotingimg #boxResultThisOutput{
-        border: 3px solid transparent;
-    border-radius:20px;
-    background:
-        linear-gradient(#080b14, #080b14) padding-box,
-        linear-gradient(120deg, #00ffff, #d900ff) border-box; outline:none;
-        width:220px; height:180px; margin:30px;
-      box-shadow:
-    inset 0 -3px 10px rgba(50, 255, 0, 0.9),
-    inset 3px 0 18px rgba(0, 255, 255, 0.8),
-    inset -3px 0 18px rgba(255, 0, 255, 0.75);
-}
- /* ----------------------------------------------- 3d iamge mouse animation ---------------------------------------------------- */
 
-  .plotAreaImage {
-            transition: transform 0.15s ease-out;
-            transform-style: preserve-3d;
-        }
-
-        .plotAreaImage img {
-            width:250px;
-            object-fit:contain;
-            border-radius: 5px;
-            pointer-events: none;
-           margin:30px 30px 30px 0px;
-
-            filter:
-                drop-shadow(0 3px 5px rgba(50, 255, 0, 0.8))
-                drop-shadow(5px 0 10px rgba(0, 255, 255, 0.7))
-                drop-shadow(-5px 0 10px rgba(255, 0, 255, 0.7));
-                /* rotate:-15deg; */
-        }
-        #boxResultThisOutput p{
-            margin:20px 20px 20px 30px; text-align:center;
-            color:#00eaff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:500;
-        }
-          #boxResultThisOutput h1{
-            margin:20px 20px 20px 30px; text-align:center; color:rgb(0, 255, 200);
-        }
-        .formulaBoxContainer {
-              border: 1px solid transparent;
-    border-radius:20px;
+.contetResultPlotingimg #boxResultThisOutput {
+    border: 3px solid transparent;
+    border-radius: 20px;
     background:
         linear-gradient(#080b14, #080b14) padding-box,
         linear-gradient(120deg, #00ffff, #d900ff) border-box;
-        margin:30px; padding:10px;
-        }
-        .code-font {
-            display:flex;
-        }
-        .code-font i{
-            border:1px solid darkblue; padding-inline:20px; width:40px; height:40px;
-            justify-content: center; align-items:center; display:flex; border-radius:50%; 
-            background: linear-gradient(135deg, #1500ff, #00fffb); color:#ffffff;
-        }
-        .code-font p {
-            color:#ffffff; display:flex; justify-content: center; align-items:center; margin-left:15px;
-            font-weight:500;
-        }
-        .formulaItwm {
-            display:flex; border: 1px solid transparent; border-radius:5px; background: linear-gradient(#080b14, #080b14) padding-box, linear-gradient(120deg, #00ffff, #d900ff) border-box;
-            padding:10px; margin-left:10px; width:85%; text-align:center; position: relative; left:45px;
-            color:white;
-        }
-         .area { color: #00ffff; } .front { color: #ff00ff; } .back { color: #ffff00; }
-    .left { color: #00ff66; } .right { color: #ff6600; } .bracket { color: white; }
-        .formulaItwm i{
-            justify-content: center; align-items:center; display:flex; color:cyan;
-            position:relative; left:50px;
-           text-shadow:
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 30px #00ffff,
-    0 0 10px #00ffff;
-&:hover{
-    color:rgb(0, 208, 255); transition:0.5s e;
+    outline: none;
+    width: 220px;
+    height: 180px;
+    margin: 30px;
+    box-shadow:
+        inset 0 -3px 10px rgba(50, 255, 0, 0.9),
+        inset 3px 0 18px rgba(0, 255, 255, 0.8),
+        inset -3px 0 18px rgba(255, 0, 255, 0.75);
 }
-        }
 
-        .ideaCalculation-contaiener {     
-        border: 1px solid transparent;
-    border-radius:15px;
+/* ----------------------------------------------- 3d iamge mouse animation ---------------------------------------------------- */
+
+.plotAreaImage {
+    transition: transform 0.15s ease-out;
+    transform-style: preserve-3d;
+}
+
+.plotAreaImage img {
+    width: 250px;
+    object-fit: contain;
+    border-radius: 5px;
+    pointer-events: none;
+    margin: 30px 30px 30px 0px;
+
+    filter:
+        drop-shadow(0 3px 5px rgba(50, 255, 0, 0.8)) drop-shadow(5px 0 10px rgba(0, 255, 255, 0.7)) drop-shadow(-5px 0 10px rgba(255, 0, 255, 0.7));
+    /* rotate:-15deg; */
+}
+
+#boxResultThisOutput p {
+    margin: 20px 20px 20px 30px;
+    text-align: center;
+    color: #00eaff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+#boxResultThisOutput h1 {
+    margin: 20px 20px 20px 30px;
+    text-align: center;
+    color: rgb(0, 255, 200);
+}
+
+.formulaBoxContainer {
+    border: 1px solid transparent;
+    border-radius: 20px;
     background:
         linear-gradient(#080b14, #080b14) padding-box,
-        linear-gradient(120deg, #00ffff, #d900ff) border-box; outline:none;
-        padding:10px; margin:20px; height:50px;
-        display:flex; align-items:center;
+        linear-gradient(120deg, #00ffff, #d900ff) border-box;
+    margin: 30px;
+    padding: 10px;
+}
+
+.code-font {
+    display: flex;
+}
+
+.code-font i {
+    border: 1px solid darkblue;
+    padding-inline: 20px;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1500ff, #00fffb);
+    color: #ffffff;
+}
+
+.code-font p {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+.formulaItwm {
+    display: flex;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: linear-gradient(#080b14, #080b14) padding-box, linear-gradient(120deg, #00ffff, #d900ff) border-box;
+    padding: 10px;
+    margin-left: 10px;
+    width: 85%;
+    text-align: center;
+    position: relative;
+    left: 45px;
+    color: white;
+}
+
+.area {
+    color: #00ffff;
+}
+
+.front {
+    color: #ff00ff;
+}
+
+.back {
+    color: #ffff00;
+}
+
+.left {
+    color: #00ff66;
+}
+
+.right {
+    color: #ff6600;
+}
+
+.bracket {
+    color: white;
+}
+
+.formulaItwm i {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: cyan;
+    position: relative;
+    left: 50px;
+    text-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff,
+        0 0 10px #00ffff;
+
+    &:hover {
+        color: rgb(0, 208, 255);
+        transition: 0.5s e;
     }
-    .ideaCalculation-contaiener i {
-        color:cyan; font-size:20px; margin-left:20px;
-         border:1px solid darkblue; width:40px; height:40px;
-            justify-content: center; align-items:center; display:flex; border-radius:50%; 
-            background: linear-gradient(150deg, #0044d7, #00d5d2,#c600c6); color:#ffffff;
-    }
-     .ideaCalculation-contaiener p{
-        color:rgba(0, 234, 255, 0.807); position: relative; left:20px;
-     }
+}
+
+.ideaCalculation-contaiener {
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background:
+        linear-gradient(#080b14, #080b14) padding-box,
+        linear-gradient(120deg, #00ffff, #d900ff) border-box;
+    outline: none;
+    padding: 10px;
+    margin: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.ideaCalculation-contaiener i {
+    color: cyan;
+    font-size: 20px;
+    margin-left: 20px;
+    border: 1px solid darkblue;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    background: linear-gradient(150deg, #0044d7, #00d5d2, #c600c6);
+    color: #ffffff;
+}
+
+.ideaCalculation-contaiener p {
+    color: rgba(0, 234, 255, 0.807);
+    position: relative;
+    left: 20px;
+}
+
 .ideaCalculation-contaiener .coloreffectLatpoint {
-    color:#ffffffc8;
+    color: #ffffffc8;
 }
 
 
 /* ======================================= footer text --------====================================== */
 
-  .footerText {
-            display: flex; align-items: center; justify-content: center; gap:15px;
-            position: relative; top:20px;
-  }
+.footerText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    top: 20px;
+}
 
-        .line {
-            width: 95px; height: 2px; background: #00ffff; box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
-        }
+.line {
+    width: 95px;
+    height: 2px;
+    background: #00ffff;
+    box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+}
 
-        .text {
-            color: #8aa9bd; font-size: 13px; font-weight: 500; white-space: nowrap;
-        }
+.text {
+    color: #8aa9bd;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
 
-        .heart {
-            display: inline-block; margin: 0 5px; color: #00d9ff; font-size: 22px; line-height: 0; text-shadow: 0 0 5px #00ffff, 0 0 12px #00ffff, 0 0 20px #00ffff;
-        }
+.heart {
+    display: inline-block;
+    margin: 0 5px;
+    color: #00d9ff;
+    font-size: 22px;
+    line-height: 0;
+    text-shadow: 0 0 5px #00ffff, 0 0 12px #00ffff, 0 0 20px #00ffff;
+}
 
-        .plotAreaImage .inputAreaPrintbox{
-            display:flex; justify-content:center; align-items:center;
-            position: absolute;
-        }
-        .inputAreaPrintbox #plotAraInputText_back {
-            position: relative; bottom:230px; left:70px; color:#ffffff;
-        }
-                .inputAreaPrintbox #plotAraInputText_fornt{
-            position: relative; bottom:40px; left:100px; color:#ffffff;
-        }
-                        .inputAreaPrintbox #plotAraInputText_left{
-            position: relative; bottom:120px; right:75px; color:#ffffff;
-        }
-                            .inputAreaPrintbox #plotAraInputText_right{
-            position: relative; bottom:160px; left:130px; color:#ffffff;
-        }
+.plotAreaImage .inputAreaPrintbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.inputAreaPrintbox #plotAraInputText_back {
+    position: relative;
+    bottom: 230px;
+    left: 70px;
+    color: #ffffff;
+}
+
+.inputAreaPrintbox #plotAraInputText_fornt {
+    position: relative;
+    bottom: 40px;
+    left: 100px;
+    color: #ffffff;
+}
+
+.inputAreaPrintbox #plotAraInputText_left {
+    position: relative;
+    bottom: 120px;
+    right: 75px;
+    color: #ffffff;
+}
+
+.inputAreaPrintbox #plotAraInputText_right {
+    position: relative;
+    bottom: 160px;
+    left: 130px;
+    color: #ffffff;
+}
 
 
 /* ...existing code... */
@@ -1028,7 +1225,7 @@ font-weight:600;
         left: auto;
     }
 
-    .formulaItwm > p {
+    .formulaItwm>p {
         min-width: 0;
         overflow-wrap: anywhere;
     }
@@ -1215,7 +1412,7 @@ font-weight:600;
     --cyan: #00d9ff;
     --purple: #b000ff;
     --panel-bg: linear-gradient(#080b14, #080b14) padding-box,
-                linear-gradient(120deg, #00ffff, #ff00fb) border-box;
+        linear-gradient(120deg, #00ffff, #ff00fb) border-box;
     --panel-shadow: 0 0 12px #00eaff, 0 0 25px rgba(0, 234, 255, 0.35), inset 0 0 15px rgba(0, 234, 255, 0.12);
     --input-text: #cfffff;
 }
@@ -1231,7 +1428,7 @@ body.light-theme {
     --cyan: #0ea5e9;
     --purple: #8b5cf6;
     --panel-bg: linear-gradient(#e9fffe, #e3f6ff) padding-box,
-                linear-gradient(120deg, #0ea5e9, #8b5cf6) border-box;
+        linear-gradient(120deg, #0ea5e9, #8b5cf6) border-box;
     --panel-shadow: 0 0 12px rgba(14, 165, 233, 0.22), 0 0 25px rgba(139, 92, 246, 0.12), inset 0 0 15px rgba(14, 165, 233, 0.12);
     --input-text: #0f172a;
 }
@@ -1248,7 +1445,7 @@ body {
 body.light-theme .header {
     background: var(--header-bg);
     box-shadow: inset 0 0 35px rgba(32, 129, 219, 0.08);
-    color:black;
+    color: black;
 }
 
 body.light-theme .headingBox h1,
@@ -1258,25 +1455,51 @@ body.light-theme .contentBox_one .plotEnterText,
 body.light-theme .contentBox_two .fontAwesomeIcon p,
 body.light-theme .code-font p,
 body.light-theme .ideaCalculation-contaiener p,
-body.light-theme .inputAreaPrintbox #plotAraInputText_back {color: #00f7b1;}
-body.light-theme .inputAreaPrintbox #plotAraInputText_fornt {color: #00f7b1;}
-body.light-theme .inputAreaPrintbox #plotAraInputText_left {color: #00f7b1;}
-body.light-theme .inputAreaPrintbox #plotAraInputText_right {color: #00f7b1;}
-body.light-theme .contetResultPlotingimg #boxResultThisOutput {background: #ffffff;   box-shadow:
+body.light-theme .inputAreaPrintbox #plotAraInputText_back {
+    color: #00f7b1;
+}
+
+body.light-theme .inputAreaPrintbox #plotAraInputText_fornt {
+    color: #00f7b1;
+}
+
+body.light-theme .inputAreaPrintbox #plotAraInputText_left {
+    color: #00f7b1;
+}
+
+body.light-theme .inputAreaPrintbox #plotAraInputText_right {
+    color: #00f7b1;
+}
+
+body.light-theme .contetResultPlotingimg #boxResultThisOutput {
+    background: #ffffff;
+    box-shadow:
         inset 0 -4px 10px rgba(0, 255, 180, 0.18),
         inset -4px 0 10px rgba(0, 200, 255, 0.15),
-        inset 4px 0 10px rgba(140, 80, 255, 0.12);}
-        body.light-theme .sideInputbox_group p {color:#00f7b1;}
-        body.light-theme .homeBox i{
-            color:#00f7b1; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35), 2px 3px 5px rgba(0, 0, 0, 0.20);
-        }
-        body.light-theme .TextItem-scal i {color:#00f7b1; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35), 2px 3px 5px rgba(0, 0, 0, 0.20);}
-    body.light-theme .sideInputbox_group i {
-         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35), 2px 3px 5px rgba(0, 0, 0, 0.20);
-    }
-     body.light-theme .fontAwesomeIcon i {
-         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35), 2px 3px 5px rgba(0, 0, 0, 0.20);
-    }
+        inset 4px 0 10px rgba(140, 80, 255, 0.12);
+}
+
+body.light-theme .sideInputbox_group p {
+    color: #00f7b1;
+}
+
+body.light-theme .homeBox i {
+    color: #00f7b1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35), 2px 3px 5px rgba(0, 0, 0, 0.20);
+}
+
+body.light-theme .TextItem-scal i {
+    color: #00f7b1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35), 2px 3px 5px rgba(0, 0, 0, 0.20);
+}
+
+body.light-theme .sideInputbox_group i {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35), 2px 3px 5px rgba(0, 0, 0, 0.20);
+}
+
+body.light-theme .fontAwesomeIcon i {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35), 2px 3px 5px rgba(0, 0, 0, 0.20);
+}
 
 body.light-theme .text {
     color: var(--text);
@@ -1302,7 +1525,7 @@ body.light-theme .leftInputBox_three input,
 body.light-theme .rightInputBox_four input {
     color: var(--input-text);
     background: linear-gradient(#ffffff, #ffffff) padding-box,
-                linear-gradient(120deg, #0ea5e9, #8b5cf6) border-box;
+        linear-gradient(120deg, #0ea5e9, #8b5cf6) border-box;
 }
 
 body.light-theme .TextItem-scal,
@@ -1314,8 +1537,9 @@ body.light-theme .sideInputbox_group .rightInputBox_four {
     background: var(--panel-bg);
     box-shadow: var(--panel-shadow);
 }
+
 body.light-theme .coloreffectLatpoint {
-    color:rgb(0, 35, 73);
+    color: rgb(0, 35, 73);
 }
 
 body.light-theme .line {
@@ -1328,4 +1552,4 @@ body.light-theme .heart {
     text-shadow: 0 0 5px var(--cyan), 0 0 12px var(--cyan), 0 0 20px var(--cyan);
 }
 
-/* ...existing code... */ 
+/* ...existing code... */
