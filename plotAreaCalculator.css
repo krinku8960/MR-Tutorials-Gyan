@@ -928,7 +928,8 @@ font-weight:600;
 /* ================= FULL-PAGE RESPONSIVE LAYOUT ================= */
 
 .contaienr-footerItemBox {
-    width: min(100% - 40px, 1440px);
+    width: calc(100% - 40px);
+    max-width: 1440px;
     margin-inline: auto;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
